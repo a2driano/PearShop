@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="pearshop:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="pearshop-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="pearshop:war exploded" />
+    </root>
+  </artifact>
+</component>
