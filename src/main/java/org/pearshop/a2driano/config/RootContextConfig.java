@@ -40,17 +40,17 @@ public class RootContextConfig {
         return dataSource;
     }
 
-    @Bean(name = "dataSourceInitializer")
-    public DataSourceInitializer dataSourceInitializer(DriverManagerDataSource dataSource) {
-        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-        populator.addScript(new ClassPathResource("populate.sql"));
-
-        DataSourceInitializer initializer = new DataSourceInitializer();
-        initializer.setDataSource(dataSource);
-        initializer.setDatabasePopulator(populator);
-
-        return initializer;
-    }
+//    @Bean(name = "dataSourceInitializer")
+//    public DataSourceInitializer dataSourceInitializer(DriverManagerDataSource dataSource) {
+//        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
+//        populator.addScript(new ClassPathResource("populate.sql"));
+//
+//        DataSourceInitializer initializer = new DataSourceInitializer();
+//        initializer.setDataSource(dataSource);
+//        initializer.setDatabasePopulator(populator);
+//
+//        return initializer;
+//    }
 
     @Bean(name = "entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DriverManagerDataSource dataSource) {
@@ -64,7 +64,7 @@ public class RootContextConfig {
 
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
-        entityManagerFactoryBean.setPackagesToScan("com.kirillrublevsky.app.model");
+        entityManagerFactoryBean.setPackagesToScan("org.pearshop.a2driano.model");
         entityManagerFactoryBean.setLoadTimeWeaver(new InstrumentationLoadTimeWeaver());
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         entityManagerFactoryBean.setJpaPropertyMap(jpaProperties);
