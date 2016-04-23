@@ -3,7 +3,6 @@ package org.pearshop.a2driano.model.web;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.pearshop.a2driano.model.Category;
 import org.pearshop.a2driano.model.Color;
-import org.pearshop.a2driano.model.entity.Order;
 
 /**
  * @version 1.0
@@ -25,7 +24,7 @@ public class ProductDTO {
     private double camera;
     private double price;
     private int quantity;
-    private Order order;
+//    private Order order;
 
     public int getId() {
         return id;
@@ -123,11 +122,11 @@ public class ProductDTO {
         this.quantity = quantity;
     }
 
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
+//    public Order getOrder() {
+//        return order;
+//    }
+//
+//    public void setOrder(Order order) {
+//        this.order = order;
+//    }
 }

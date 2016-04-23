@@ -2,6 +2,7 @@ package org.pearshop.a2driano.model.entity;
 
 import org.pearshop.a2driano.model.Category;
 import org.pearshop.a2driano.model.Color;
+import org.pearshop.a2driano.model.Communicator;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -20,16 +21,17 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column(name = "article")
+    @Column(name = "article", nullable = false, unique = true)
     private int article;
 
-    @Column(name = "category")
+    @Column(name = "category", columnDefinition = "VARCHAR(15)")
+    @Enumerated(EnumType.STRING)
     private Category category;
 
-    @Column(name = "name")
+    @Column(name = "name", nullable = false, unique = false, columnDefinition = "VARCHAR(255)")
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition = "VARCHAR(500)")
     private String description;
 
     @Column(name = "screen")
@@ -38,10 +40,12 @@ public class Product implements Serializable {
     @Column(name = "memory")
     private int memory;
 
-    @Column(name = "communicator")
-    private String communicator;
+    @Column(name = "communicator", columnDefinition = "VARCHAR(20)")
+    @Enumerated(EnumType.STRING)
+    private Communicator communicator;
 
-    @Column(name = "color")
+    @Column(name = "color", columnDefinition = "VARCHAR(20)")
+    @Enumerated(EnumType.STRING)
     private Color color;
 
     @Column(name = "camera")
@@ -54,7 +58,7 @@ public class Product implements Serializable {
     private int quantity;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "order_id")
     private Order order;
 
     public int getId() {
@@ -113,14 +117,6 @@ public class Product implements Serializable {
         this.memory = memory;
     }
 
-    public String getCommunicator() {
-        return communicator;
-    }
-
-    public void setCommunicator(String communicator) {
-        this.communicator = communicator;
-    }
-
     public Color getColor() {
         return color;
     }
@@ -151,6 +147,14 @@ public class Product implements Serializable {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public Communicator getCommunicator() {
+        return communicator;
+    }
+
+    public void setCommunicator(Communicator communicator) {
+        this.communicator = communicator;
     }
 
     public Order getOrder() {

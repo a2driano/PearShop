@@ -33,18 +33,18 @@ public class Order implements Serializable{
     @Column(name = "phone")
     private int phone;
 
-    @Column(name = "description")
+    @Column(name = "description", columnDefinition="VARCHAR(255)")
     private String description;
 
     @Column(name = "date")
     @Temporal(value=TemporalType.DATE)
     private Date date;
 
-    @OneToMany
-    @JoinColumn(name = "id")
+    @OneToMany(mappedBy = "order")
     private List<Product> product;
 
-    @Column(name = "status")
+    @Column(name = "status", columnDefinition="VARCHAR(25)")
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     public int getId() {
@@ -118,4 +118,5 @@ public class Order implements Serializable{
     public void setStatus(Status status) {
         this.status = status;
     }
+
 }
