@@ -5,7 +5,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Credit Line Service</title>
+    <title>PearShop</title>
 </head>
 <body>
     <h1>${message}</h1>

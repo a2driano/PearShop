@@ -5,7 +5,6 @@ import org.pearshop.a2driano.model.Status;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
 /**
  * @version 1.0
@@ -14,44 +13,45 @@ import java.util.List;
  * @since 23.04.2016
  */
 @Entity
-@Table(name = "order")
-public class Order implements Serializable{
+@Table(name = "userorder")
+public class UserOrder implements Serializable {
     @Id
-    @Column(name = "id")
+    @Column(name = "order_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
-    @Column(name = "firstname")
+    @Column(name = "firstname", unique = false, nullable = false, length = 100)
     private String firstname;
 
-    @Column(name = "lastname")
+    @Column(name = "lastname", unique = false, nullable = false, length = 100)
     private String lastname;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = false, nullable = false, length = 100)
     private String email;
 
-    @Column(name = "phone")
-    private int phone;
+    @Column(name = "phone", unique = false, nullable = false, length = 12)
+    private Integer phone;
 
-    @Column(name = "description", columnDefinition="VARCHAR(255)")
+    @Column(name = "description", length = 500)
     private String description;
 
     @Column(name = "date")
-    @Temporal(value=TemporalType.DATE)
+    @Temporal(value = TemporalType.DATE)
     private Date date;
 
-    @OneToMany(mappedBy = "order")
-    private List<Product> product;
-
-    @Column(name = "status", columnDefinition="VARCHAR(25)")
+    @Column(name = "status", length = 25)
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    public int getId() {
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -79,11 +79,11 @@ public class Order implements Serializable{
         this.email = email;
     }
 
-    public int getPhone() {
+    public Integer getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
 
@@ -103,14 +103,6 @@ public class Order implements Serializable{
         this.date = date;
     }
 
-    public List<Product> getProduct() {
-        return product;
-    }
-
-    public void setProduct(List<Product> product) {
-        this.product = product;
-    }
-
     public Status getStatus() {
         return status;
     }
@@ -119,4 +111,11 @@ public class Order implements Serializable{
         this.status = status;
     }
 
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 }

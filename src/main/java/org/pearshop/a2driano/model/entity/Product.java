@@ -6,6 +6,7 @@ import org.pearshop.a2driano.model.Communicator;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @version 1.0
@@ -17,63 +18,65 @@ import java.io.Serializable;
 @Table(name = "product")
 public class Product implements Serializable {
     @Id
-    @Column(name = "id")
+    @Column(name = "product_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
-    @Column(name = "article", nullable = false, unique = true)
-    private int article;
+    @Column(name = "article", columnDefinition = "VARCHAR(25)", nullable = false, unique = true)
+    private Integer article;
 
-    @Column(name = "category", columnDefinition = "VARCHAR(15)")
+    @Column(name = "category", nullable = false, length = 25)
     @Enumerated(EnumType.STRING)
     private Category category;
 
-    @Column(name = "name", nullable = false, unique = false, columnDefinition = "VARCHAR(255)")
+    @Column(name = "name", nullable = false, unique = false, length = 255)
     private String name;
 
-    @Column(name = "description", columnDefinition = "VARCHAR(500)")
+    @Column(name = "description", length = 500)
     private String description;
 
     @Column(name = "screen")
-    private double screen;
+    private Double screen;
 
-    @Column(name = "memory")
-    private int memory;
+    @Column(name = "memory", length = 20)
+    private Integer memory;
 
-    @Column(name = "communicator", columnDefinition = "VARCHAR(20)")
+    @Column(name = "communicator", length = 20)
     @Enumerated(EnumType.STRING)
     private Communicator communicator;
 
-    @Column(name = "color", columnDefinition = "VARCHAR(20)")
+    @Column(name = "color", length = 20)
     @Enumerated(EnumType.STRING)
     private Color color;
 
-    @Column(name = "camera")
-    private double camera;
+    @Column(name = "camera", length = 10)
+    private Double camera;
 
     @Column(name = "price")
-    private double price;
+    private Double price;
 
-    @Column(name = "quantity")
-    private int quantity;
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
 
-    @ManyToOne
-    @JoinColumn(name = "order_id")
-    private Order order;
+    @Column(name = "count", nullable = true)
+    private Integer count;
 
-    public int getId() {
+    @OneToMany(mappedBy = "product")
+    private List<UserOrder> userOrders;
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getArticle() {
+    public Integer getArticle() {
         return article;
     }
 
-    public void setArticle(int article) {
+    public void setArticle(Integer article) {
         this.article = article;
     }
 
@@ -101,52 +104,20 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public double getScreen() {
+    public Double getScreen() {
         return screen;
     }
 
-    public void setScreen(double screen) {
+    public void setScreen(Double screen) {
         this.screen = screen;
     }
 
-    public int getMemory() {
+    public Integer getMemory() {
         return memory;
     }
 
-    public void setMemory(int memory) {
+    public void setMemory(Integer memory) {
         this.memory = memory;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public double getCamera() {
-        return camera;
-    }
-
-    public void setCamera(double camera) {
-        this.camera = camera;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public Communicator getCommunicator() {
@@ -157,12 +128,51 @@ public class Product implements Serializable {
         this.communicator = communicator;
     }
 
-    public Order getOrder() {
-        return order;
+    public Color getColor() {
+        return color;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setColor(Color color) {
+        this.color = color;
     }
 
+    public Double getCamera() {
+        return camera;
+    }
+
+    public void setCamera(Double camera) {
+        this.camera = camera;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
+
+    public List<UserOrder> getUserOrders() {
+        return userOrders;
+    }
+
+    public void setUserOrders(List<UserOrder> userOrders) {
+        this.userOrders = userOrders;
+    }
 }

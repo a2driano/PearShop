@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="1963442153">
-    <data-source source="LOCAL" name="H2 - dataSource" uuid="e7afba67-2f02-4cea-8ce8-169ac4a8cb4f">
+  <component name="DataSourceManagerImpl" format="xml" hash="3477955114">
+    <data-source source="LOCAL" name="H2 - dataSource" uuid="d57ceffa-21bf-496f-9ab8-0ae742c28f1d">
       <driver-ref>h2.in-memory</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.h2.Driver</jdbc-driver>

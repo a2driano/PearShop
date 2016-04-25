@@ -1,8 +1,8 @@
 -- CREATE TABLE product (
---   id  int (20) NOT NULL,
+--   product_id  int (20) NOT NULL,
 --   article  int (20) NOT NULL,
 --   category VARCHAR(25),
---   name VARCHAR(25),
+--   name VARCHAR(255),
 --   description VARCHAR(500),
 --   screen VARCHAR(25),
 --   memory  int (10) NOT NULL,
@@ -13,13 +13,28 @@
 --   quantity int (20)
 -- );
 
-
-INSERT INTO product (id, article, category, name, description, screen, memory, communicator, color
+INSERT INTO product (product_id, article, category, name, description, screen, memory, communicator, color
   , camera, price, quantity) VALUES (
   1
   , 100001
   , 'ipad'
   , 'Apple iPad Air 2 Wi-Fi 16GB Space Gray'
+  ,
+  'Экран 9.7" Retina (2048 x 1536 точек) с IPS-матрицей/ 16 млн. цветов / Apple A8X / камера 8 Мп + фронтальная 1.2 Мп / Bluetooth 4.0 / Wi-Fi 802.11 a/b/g/n/ac / 16 ГБ встроенной памяти / iOS 8.1 / 240 x 169.5 x 6.1 мм, 437 г / серый космос'
+  , 9.7
+  , 16
+  , 'wi-fi'
+  , 'space gray'
+  , 8
+  , 10713.00
+  , 12);
+
+INSERT INTO product (product_id, article, category, name, description, screen, memory, communicator, color
+  , camera, price, quantity) VALUES (
+  2
+  , 100001
+  , 'ipad'
+  , 'Apple iPad 4'
   ,
   'Экран 9.7" Retina (2048 x 1536 точек) с IPS-матрицей/ 16 млн. цветов / Apple A8X / камера 8 Мп + фронтальная 1.2 Мп / Bluetooth 4.0 / Wi-Fi 802.11 a/b/g/n/ac / 16 ГБ встроенной памяти / iOS 8.1 / 240 x 169.5 x 6.1 мм, 437 г / серый космос'
   , 9.7
@@ -40,12 +55,11 @@ INSERT INTO product (id, article, category, name, description, screen, memory, c
 --   , '01 Jan 2016'
 --   , 'completed');
 
--- 	INSERT INTO product (name, code, title, description, manufacturer, category, price, stock) VALUES (
---     'dolomite'
--- 	, 'EV207286'
--- 	, 'Pinnacle Dolomite'
--- 	, 'The Pinnacle Dolomite is our fast road bike designed for UK road conditions'
--- 	, 'Pinnacle'
--- 	, 'bikes'
--- 	, 417
--- 	, 7);
+-- CREATE TABLE test
+-- (id INTEGER NOT NULL,
+--  name VARCHAR(25) NOT NULL);
+
+-- INSERT INTO test (id, name) VALUES (
+--   3
+--   , 'test sdf name'
+-- );

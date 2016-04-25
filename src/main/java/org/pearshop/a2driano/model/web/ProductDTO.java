@@ -24,6 +24,7 @@ public class ProductDTO {
     private double camera;
     private double price;
     private int quantity;
+    private int count;
 //    private Order order;
 
     public int getId() {
@@ -122,7 +123,14 @@ public class ProductDTO {
         this.quantity = quantity;
     }
 
-//    public Order getOrder() {
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+    //    public Order getOrder() {
 //        return order;
 //    }
 //
