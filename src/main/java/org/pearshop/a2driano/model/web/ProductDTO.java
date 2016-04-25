@@ -12,34 +12,33 @@ import org.pearshop.a2driano.model.Color;
  */
 @JsonAutoDetect
 public class ProductDTO {
-    private int id;
-    private int article;
+    private Integer id;
+    private Integer article;
     private Category category;
     private String name;
     private String description;
-    private double screen;
-    private int memory;
+    private Double screen;
+    private Integer memory;
     private String communicator;
     private Color color;
-    private double camera;
-    private double price;
-    private int quantity;
-    private int count;
-//    private Order order;
+    private Double camera;
+    private Double price;
+    private Integer quantity;
+    private Integer count;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getArticle() {
+    public Integer getArticle() {
         return article;
     }
 
-    public void setArticle(int article) {
+    public void setArticle(Integer article) {
         this.article = article;
     }
 
@@ -67,19 +66,19 @@ public class ProductDTO {
         this.description = description;
     }
 
-    public double getScreen() {
+    public Double getScreen() {
         return screen;
     }
 
-    public void setScreen(double screen) {
+    public void setScreen(Double screen) {
         this.screen = screen;
     }
 
-    public int getMemory() {
+    public Integer getMemory() {
         return memory;
     }
 
-    public void setMemory(int memory) {
+    public void setMemory(Integer memory) {
         this.memory = memory;
     }
 
@@ -99,42 +98,35 @@ public class ProductDTO {
         this.color = color;
     }
 
-    public double getCamera() {
+    public Double getCamera() {
         return camera;
     }
 
-    public void setCamera(double camera) {
+    public void setCamera(Double camera) {
         this.camera = camera;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
-    public int getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 
-    public int getCount() {
+    public Integer getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(Integer count) {
         this.count = count;
     }
-    //    public Order getOrder() {
-//        return order;
-//    }
-//
-//    public void setOrder(Order order) {
-//        this.order = order;
-//    }
 }
