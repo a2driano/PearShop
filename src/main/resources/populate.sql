@@ -1,17 +1,5 @@
--- CREATE TABLE product (
---   product_id  int (20) NOT NULL,
---   article  int (20) NOT NULL,
---   category VARCHAR(25),
---   name VARCHAR(255),
---   description VARCHAR(500),
---   screen VARCHAR(25),
---   memory  int (10) NOT NULL,
---   communicator VARCHAR(20),
---   color VARCHAR(20),
---   camera int (20),
---   price int (20),
---   quantity int (20)
--- );
+-- SET NAMES 'utf8';
+-- SET NAMES 'utf8' COLLATE 'utf8_general_ci';
 INSERT INTO PRODUCT (product_id, article, category, name, description, screen, memory, communicator, color
   , camera, price, quantity) VALUES (
   1

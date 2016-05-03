@@ -8,15 +8,13 @@
     <title>PearShop</title>
 </head>
 <body>
-<h1>${message}</h1>
-<%--<h1>${message}</h1>--%>
-
-    <c:forEach items="${productlist}" var="productDTO">
+    <h1>${message}</h1>
+    <c:forEach items="${productList2}" var="productDTO">
         <tr>
-            <td>${productDTO.id}</td>
-            <td>${productDTO.name}</td>
-            <td>${productDTO.category}</td>
-            <td>${productDTO.description}</td>
+            <td>${productDTO.id}</td><br>
+            <td>${productDTO.name}</td><br>
+            <td>${productDTO.category}</td><br>
+            <td>${productDTO.description}</td><br>
         </tr>
     </c:forEach>
 </body>
