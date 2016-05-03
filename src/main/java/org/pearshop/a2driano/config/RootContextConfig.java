@@ -33,8 +33,9 @@ public class RootContextConfig {
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
-//        dataSource.setUrl("jdbc:h2:mem:dataSource;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false");
-        dataSource.setUrl("jdbc:h2:mem:dataSource");
+//        dataSource.setUrl("jdbc:h2:mem:dataSource;DB_CLOSE_DELAY=-1");
+        dataSource.setUrl("jdbc:h2:mem:dataSource;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false");
+//        dataSource.setUrl("jdbc:h2:mem:dataSource");
         dataSource.setUsername("");
         dataSource.setPassword("");
 
@@ -44,7 +45,7 @@ public class RootContextConfig {
     @Bean(name = "dataSourceInitializer")
     public DataSourceInitializer dataSourceInitializer(DriverManagerDataSource dataSource) {
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-//        populator.addScript(new ClassPathResource("populate.sql"));
+        populator.addScript(new ClassPathResource("populate.sql"));
 //        populator.addScript(new ClassPathResource("table_create.sql"));
 
         DataSourceInitializer initializer = new DataSourceInitializer();
@@ -59,8 +60,9 @@ public class RootContextConfig {
 
         Map<String, Object> jpaProperties = new HashMap<>();
         jpaProperties.put("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
-//        jpaProperties.put("hibernate.hbm2ddl.auto", "create");
         jpaProperties.put("hibernate.hbm2ddl.auto", "create-drop");
+//        jpaProperties.put("hibernate.hbm2ddl.auto", "create");
+//        jpaProperties.put("hibernate.hbm2ddl.auto", "validate");
         jpaProperties.put("hibernate.show_sql", "true");
         jpaProperties.put("hibernate.format_sql", "true");
         jpaProperties.put("hibernate.use_sql_comments", "true");

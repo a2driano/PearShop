@@ -3,6 +3,7 @@ package org.pearshop.a2driano.model.web;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.pearshop.a2driano.model.Category;
 import org.pearshop.a2driano.model.Color;
+import org.pearshop.a2driano.model.Communicator;
 
 /**
  * @version 1.0
@@ -19,7 +20,7 @@ public class ProductDTO {
     private String description;
     private Double screen;
     private Integer memory;
-    private String communicator;
+    private Communicator communicator;
     private Color color;
     private Double camera;
     private Double price;
@@ -82,11 +83,11 @@ public class ProductDTO {
         this.memory = memory;
     }
 
-    public String getCommunicator() {
+    public Communicator getCommunicator() {
         return communicator;
     }
 
-    public void setCommunicator(String communicator) {
+    public void setCommunicator(Communicator communicator) {
         this.communicator = communicator;
     }
 

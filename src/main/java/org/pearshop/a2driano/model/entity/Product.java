@@ -16,6 +16,9 @@ import java.util.List;
  */
 @Entity
 @Table(name = "product")
+@NamedQueries({
+        @NamedQuery(name = "GetAllProducts", query = "SELECT a FROM Product a")
+})
 public class Product implements Serializable {
     @Id
     @Column(name = "product_id")

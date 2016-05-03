@@ -1,8 +1,42 @@
--- CREATE DATABASE my_db;
---
---
---
---
+create table product (
+  product_id integer not null,
+  article VARCHAR(25) not null,
+  camera double,
+  category varchar(25) not null,
+  color varchar(20),
+  communicator varchar(20),
+  count integer,
+  description varchar(500),
+  memory integer,
+  name varchar(255) not null,
+  price double,
+  quantity integer not null,
+  screen double,
+  primary key (product_id)
+);
+create table userorder (
+  order_id integer not null,
+  date date,
+  description varchar(500),
+  email varchar(100) not null,
+  firstname varchar(100) not null,
+  lastname varchar(100) not null,
+  phone integer not null,
+  status varchar(25),
+  product_id integer,
+  primary key (order_id)
+);
+alter table product
+add constraint UK_tqchd79ivu9bmv4gnkvs5yth1 unique (article);
+alter table userorder
+add constraint FKqmq02pyieanrditflagwx4f1p
+foreign key (product_id)
+references product
+
+
+
+
+
 -- CREATE TABLE PRODUCT (
 --   product_id  int (20) NOT NULL,
 --   article  int (20) NOT NULL,
@@ -48,9 +82,3 @@
 --   , 8
 --   , 10713.00
 --   , 12);
-INSERT INTO TEST (test_id,  name) VALUES (
-  2
-  , 'test');
-INSERT INTO TEST (test_id,  name) VALUES (
-  3
-  , 'test3333');
