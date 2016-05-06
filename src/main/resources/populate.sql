@@ -1,5 +1,7 @@
 -- SET NAMES 'utf8';
 -- SET NAMES 'utf8' COLLATE 'utf8_general_ci';
+-- SET NAMES 'utf8' COLLATE 'utf8_general_ci';
+SET NAMES 'utf8';
 INSERT INTO PRODUCT (product_id, article, category, name, description, screen, memory, communicator, color
   , camera, price, quantity) VALUES (
   1
@@ -14,7 +16,8 @@ INSERT INTO PRODUCT (product_id, article, category, name, description, screen, m
   , 'SPACEGRAY'
   , 8
   , 10713.00
-  , 12);
+  , 12
+);
 
 -- INSERT INTO PRODUCT (product_id, article, category, name, description, screen, memory, communicator, color
 --   , camera, price, quantity) VALUES (

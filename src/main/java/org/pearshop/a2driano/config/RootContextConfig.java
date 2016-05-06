@@ -33,8 +33,9 @@ public class RootContextConfig {
     public DriverManagerDataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("org.h2.Driver");
-//        dataSource.setUrl("jdbc:h2:mem:dataSource;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false");
-        dataSource.setUrl("jdbc:h2:mem:dataSource?useUnicode=yes&characterEncoding=utf8;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false");
+        dataSource.setUrl("jdbc:h2:mem:dataSource;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false");
+//        dataSource.setUrl("jdbc:h2:mem:dataSource?useUnicode=yes&characterEncoding=utf8;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false");
+//        dataSource.setUrl("jdbc:h2:mem:dataSource?useJvmCharsetConverters=false&useDynamicCharsetInfo=false&useUnicode=true&characterEncoding=UTF-8&characterSetResults=UTF-8&useEncoding=true;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=false");
         dataSource.setUsername("");
         dataSource.setPassword("");
 
@@ -44,8 +45,8 @@ public class RootContextConfig {
     @Bean(name = "dataSourceInitializer")
     public DataSourceInitializer dataSourceInitializer(DriverManagerDataSource dataSource) {
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
+        populator.setSqlScriptEncoding("utf8");
         populator.addScript(new ClassPathResource("populate.sql"));
-//        populator.addScript(new ClassPathResource("table_create.sql"));
 
         DataSourceInitializer initializer = new DataSourceInitializer();
         initializer.setDataSource(dataSource);
@@ -65,10 +66,6 @@ public class RootContextConfig {
         jpaProperties.put("hibernate.show_sql", "true");
         jpaProperties.put("hibernate.format_sql", "true");
         jpaProperties.put("hibernate.use_sql_comments", "true");
-
-//        jpaProperties.put("hibernate.connection.CharSet", "utf-8");
-//        jpaProperties.put("hibernate.connection.useUnicode", true);
-//        jpaProperties.put("hibernate.connection.characterEncoding", "utf-8");
 
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
         entityManagerFactoryBean.setDataSource(dataSource);
