@@ -30,7 +30,7 @@ public class UserOrder implements Serializable {
     private String email;
 
     @Column(name = "phone", unique = false, nullable = false, length = 12)
-    private Integer phone;
+    private String phone;
 
     @Column(name = "description", length = 500)
     private String description;
@@ -79,11 +79,11 @@ public class UserOrder implements Serializable {
         this.email = email;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

@@ -9,7 +9,7 @@
 </head>
 <body>
     <h1>${message}</h1>
-    <c:forEach items="${productList2}" var="productDTO">
+    <c:forEach items="${productList}" var="productDTO">
         <tr>
             <td>${productDTO.id}</td><br>
             <td>${productDTO.name}</td><br>

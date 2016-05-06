@@ -18,7 +18,7 @@ public class UserOrderDTO {
     private String firstname;
     private String lastname;
     private String email;
-    private Integer phone;
+    private String phone;
     private String description;
     private Date date;
     private Status status;
@@ -56,11 +56,11 @@ public class UserOrderDTO {
         this.email = email;
     }
 
-    public Integer getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 

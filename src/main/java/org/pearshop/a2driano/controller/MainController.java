@@ -27,12 +27,7 @@ public class MainController {
     public ModelAndView start(){
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("message", "WELCOME TO PEARSHOP!");
-        modelAndView.addObject("productList2", productService.getAll());
-//        List<ProductDTO>productDTOList=new ArrayList<>();
-        for(ProductDTO productDTO:productService.getAll()){
-            System.out.println(productDTO.getName());
-            System.out.println(productDTO.getDescription());
-        }
+        modelAndView.addObject("productList", productService.getAll());
         return modelAndView;
     }
 }

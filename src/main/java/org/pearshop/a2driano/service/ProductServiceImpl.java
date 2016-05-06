@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static org.pearshop.a2driano.util.ApplicationUtil.convertProductToProductDTOList;
+import static org.pearshop.a2driano.util.ApplicationUtil.convertProductListToProductDTOList;
 
 /**
  * @version 1.0
@@ -22,6 +22,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDTO> getAll() {
-        return convertProductToProductDTOList(productRepository.getAllproduct());
+        return convertProductListToProductDTOList(productRepository.getAllproduct());
     }
 }
