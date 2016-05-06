@@ -1,5 +1,6 @@
 package org.pearshop.a2driano.repositories;
 
+import org.pearshop.a2driano.model.Category;
 import org.pearshop.a2driano.model.entity.Product;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +14,8 @@ import java.util.List;
  */
 @Repository
 public interface ProductRepository {
-    List<Product> getAllproduct();
+    List<Product> getAllProduct();
+    List<Product> getAllProductByCategory(Category category);
+    Product getProductByArticle(Integer article);
 
 }

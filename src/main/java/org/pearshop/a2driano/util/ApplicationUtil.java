@@ -41,8 +41,8 @@ public class ApplicationUtil {
         return productDTOList;
     }
 
-    public static UserOrder convertUserOrderDTOToUserOrder(UserOrderDTO userOrderDTO){
-        UserOrder userOrder=new UserOrder();
+    public static UserOrder convertUserOrderDTOToUserOrder(UserOrderDTO userOrderDTO) {
+        UserOrder userOrder = new UserOrder();
         userOrder.setId(userOrderDTO.getId());
         userOrder.setFirstname(userOrderDTO.getFirstname());
         userOrder.setLastname(userOrderDTO.getLastname());
@@ -56,8 +56,8 @@ public class ApplicationUtil {
         return userOrder;
     }
 
-    public static UserOrderDTO convertUserOrderToUserOrderDTO(UserOrder userOrder){
-        UserOrderDTO userOrderDTO=new UserOrderDTO();
+    public static UserOrderDTO convertUserOrderToUserOrderDTO(UserOrder userOrder) {
+        UserOrderDTO userOrderDTO = new UserOrderDTO();
         userOrderDTO.setId(userOrder.getId());
         userOrderDTO.setFirstname(userOrder.getFirstname());
         userOrderDTO.setLastname(userOrder.getLastname());
@@ -71,9 +71,9 @@ public class ApplicationUtil {
         return userOrderDTO;
     }
 
-    public static List<UserOrderDTO> convertUserOrderListToUserOrderDTOList(List<UserOrder> userOrderList){
-        List<UserOrderDTO> userOrderDTOList=new ArrayList<>();
-        for(UserOrder userOrder: userOrderList){
+    public static List<UserOrderDTO> convertUserOrderListToUserOrderDTOList(List<UserOrder> userOrderList) {
+        List<UserOrderDTO> userOrderDTOList = new ArrayList<>();
+        for (UserOrder userOrder : userOrderList) {
             userOrderDTOList.add(convertUserOrderToUserOrderDTO(userOrder));
         }
         return userOrderDTOList;

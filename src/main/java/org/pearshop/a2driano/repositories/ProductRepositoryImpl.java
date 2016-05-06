@@ -1,5 +1,6 @@
 package org.pearshop.a2driano.repositories;
 
+import org.pearshop.a2driano.model.Category;
 import org.pearshop.a2driano.model.entity.Product;
 import org.springframework.stereotype.Repository;
 
@@ -19,7 +20,19 @@ public class ProductRepositoryImpl implements ProductRepository {
     private EntityManager entityManager;
 
     @Override
-    public List<Product> getAllproduct() {
+    public List<Product> getAllProduct() {
         return entityManager.createNamedQuery("GetAllProducts").getResultList();
+    }
+
+    @Override
+    public List<Product> getAllProductByCategory(Category category) {
+        return entityManager.createNamedQuery("GetAllProductsByCategory")
+                .setParameter("category", category).getResultList();
+    }
+
+    @Override
+    public Product getProductByArticle(Integer article) {
+        return (Product)entityManager.createNamedQuery("GetProductByArticle")
+                .setParameter("article", article).getSingleResult();
     }
 }

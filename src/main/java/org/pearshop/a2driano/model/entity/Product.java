@@ -17,7 +17,9 @@ import java.util.List;
 @Entity
 @Table(name = "product")
 @NamedQueries({
-        @NamedQuery(name = "GetAllProducts", query = "SELECT a FROM Product a")
+        @NamedQuery(name = "GetAllProducts", query = "SELECT a FROM Product a"),
+        @NamedQuery(name = "GetAllProductsByCategory", query = "SELECT a FROM Product a WHERE a.category = :category"),
+        @NamedQuery(name = "GetProductByArticle", query = "SELECT a FROM Product a WHERE a.article = :article")
 })
 public class Product implements Serializable {
     @Id
