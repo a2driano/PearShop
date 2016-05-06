@@ -14,6 +14,9 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "userorder")
+@NamedQueries({
+        @NamedQuery(name = "GetAllUserOrder", query = "SELECT a FROM UserOrder a")
+})
 public class UserOrder implements Serializable {
     @Id
     @Column(name = "order_id")

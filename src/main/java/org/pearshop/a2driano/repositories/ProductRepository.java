@@ -12,10 +12,11 @@ import java.util.List;
  * @project: pearshop
  * @since 03.05.2016
  */
-@Repository
 public interface ProductRepository {
     List<Product> getAllProduct();
+
     List<Product> getAllProductByCategory(Category category);
+
     Product getProductByArticle(Integer article);
 
 }
