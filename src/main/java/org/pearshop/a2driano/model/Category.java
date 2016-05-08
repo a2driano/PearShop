@@ -8,7 +8,8 @@ package org.pearshop.a2driano.model;
  */
 public enum Category {
     IPAD("ipad"),
-    IPHONE("iphone");
+    IPHONE("iphone"),
+    IWATCH("iwatch");
 
     private String category;
 

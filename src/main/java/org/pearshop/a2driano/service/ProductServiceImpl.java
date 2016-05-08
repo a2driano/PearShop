@@ -55,4 +55,9 @@ public class ProductServiceImpl implements ProductService {
         }
         return productDTO;
     }
+
+    @Override
+    public void updateProduct(ProductDTO productDTO) {
+
+    }
 }

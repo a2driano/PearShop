@@ -29,7 +29,6 @@ public class ApplicationUtil {
         productDTO.setCamera(product.getCamera());
         productDTO.setPrice(product.getPrice());
         productDTO.setQuantity(product.getQuantity());
-        productDTO.setCount(product.getCount());
         return productDTO;
     }
 
@@ -51,7 +50,7 @@ public class ApplicationUtil {
         userOrder.setDescription(userOrderDTO.getDescription());
         userOrder.setDate(userOrderDTO.getDate());
         userOrder.setStatus(userOrderDTO.getStatus());
-        userOrder.setProduct(userOrderDTO.getProduct());
+        userOrder.setCountProductList(userOrderDTO.getCountProductList());
 
         return userOrder;
     }
@@ -66,7 +65,7 @@ public class ApplicationUtil {
         userOrderDTO.setDescription(userOrder.getDescription());
         userOrderDTO.setDate(userOrder.getDate());
         userOrderDTO.setStatus(userOrder.getStatus());
-        userOrderDTO.setProduct(userOrder.getProduct());
+        userOrderDTO.setCountProductList(userOrder.getCountProductList());
 
         return userOrderDTO;
     }

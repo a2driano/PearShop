@@ -32,6 +32,4 @@ public class ProductController {
                                           @PathVariable("article") Integer article) {
         return productService.getProductByArticle(article);
     }
-
-
 }

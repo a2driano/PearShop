@@ -4,6 +4,9 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.pearshop.a2driano.model.Category;
 import org.pearshop.a2driano.model.Color;
 import org.pearshop.a2driano.model.Communicator;
+import org.pearshop.a2driano.model.entity.CountProduct;
+
+import java.util.List;
 
 /**
  * @version 1.0
@@ -25,7 +28,15 @@ public class ProductDTO {
     private Double camera;
     private Double price;
     private Integer quantity;
-    private Integer count;
+    private List<CountProduct> countProductList;
+
+    public List<CountProduct> getCountProductList() {
+        return countProductList;
+    }
+
+    public void setCountProductList(List<CountProduct> countProductList) {
+        this.countProductList = countProductList;
+    }
 
     public Integer getId() {
         return id;
@@ -121,13 +132,5 @@ public class ProductDTO {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
     }
 }

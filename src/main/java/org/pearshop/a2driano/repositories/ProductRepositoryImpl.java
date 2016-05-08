@@ -35,4 +35,9 @@ public class ProductRepositoryImpl implements ProductRepository {
         return (Product)entityManager.createNamedQuery("GetProductByArticle")
                 .setParameter("article", article).getSingleResult();
     }
+
+    @Override
+    public void updateProduct(Product product) {
+        entityManager.merge(product);
+    }
 }

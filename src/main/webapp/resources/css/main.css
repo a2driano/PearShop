@@ -1,0 +1,21 @@
+#test{
+    /*font-family: 'Open Sans', sans-serif;*/
+    /*background-color: #1b6d85;*/
+    /*color: white;*/
+}
+.header{
+    height: 80px;
+}
+.info{
+    height: 70px;
+    background-color: #43bc43;
+    color: white;
+}
+.logo{
+    height: 90%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.container{
+    font-family: 'Open Sans', sans-serif;
+}

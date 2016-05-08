@@ -5,6 +5,7 @@ import org.pearshop.a2driano.model.Status;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @version 1.0
@@ -46,9 +47,16 @@ public class UserOrder implements Serializable {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @OneToMany(mappedBy = "userOrder")
+    private List<CountProduct> countProductList;
+
+    public List<CountProduct> getCountProductList() {
+        return countProductList;
+    }
+
+    public void setCountProductList(List<CountProduct> countProductList) {
+        this.countProductList = countProductList;
+    }
 
     public Integer getId() {
         return id;
@@ -112,13 +120,5 @@ public class UserOrder implements Serializable {
 
     public void setStatus(Status status) {
         this.status = status;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 }

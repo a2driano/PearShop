@@ -2,7 +2,6 @@ package org.pearshop.a2driano.repositories;
 
 import org.pearshop.a2driano.model.Category;
 import org.pearshop.a2driano.model.entity.Product;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -19,4 +18,5 @@ public interface ProductRepository {
 
     Product getProductByArticle(Integer article);
 
+    void updateProduct(Product product);
 }

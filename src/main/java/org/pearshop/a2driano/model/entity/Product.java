@@ -63,11 +63,16 @@ public class Product implements Serializable {
     @Column(name = "quantity", nullable = false)
     private Integer quantity;
 
-    @Column(name = "count", nullable = true)
-    private Integer count;
-
     @OneToMany(mappedBy = "product")
-    private List<UserOrder> userOrders;
+    private List<CountProduct> countProductList;
+
+    public List<CountProduct> getCountProductList() {
+        return countProductList;
+    }
+
+    public void setCountProductList(List<CountProduct> countProductList) {
+        this.countProductList = countProductList;
+    }
 
     public Integer getId() {
         return id;
@@ -163,21 +168,5 @@ public class Product implements Serializable {
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
-    }
-
-    public Integer getCount() {
-        return count;
-    }
-
-    public void setCount(Integer count) {
-        this.count = count;
-    }
-
-    public List<UserOrder> getUserOrders() {
-        return userOrders;
-    }
-
-    public void setUserOrders(List<UserOrder> userOrders) {
-        this.userOrders = userOrders;
     }
 }

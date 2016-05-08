@@ -23,6 +23,10 @@ public class ServletContextConfig extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
+        registry.addResourceHandler("/img/**").addResourceLocations("/resources/img/");
+        registry.addResourceHandler("/js/**").addResourceLocations("/resources/js/");
+        registry.addResourceHandler("/js/lib/**").addResourceLocations("/resources/js/lib");
+        registry.addResourceHandler("/css/**").addResourceLocations("/resources/css/");
     }
 
     @Bean

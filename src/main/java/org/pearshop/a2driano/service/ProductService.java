@@ -33,4 +33,6 @@ public interface ProductService {
      * @return
      */
     ProductDTO getProductByArticle(Integer article);
+
+    void updateProduct(ProductDTO productDTO);
 }

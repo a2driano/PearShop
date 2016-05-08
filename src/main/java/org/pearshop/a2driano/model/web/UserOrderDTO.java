@@ -2,9 +2,9 @@ package org.pearshop.a2driano.model.web;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import org.pearshop.a2driano.model.Status;
-import org.pearshop.a2driano.model.entity.Product;
-
+import org.pearshop.a2driano.model.entity.CountProduct;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @version 1.0
@@ -22,7 +22,15 @@ public class UserOrderDTO {
     private String description;
     private Date date;
     private Status status;
-    private Product product;
+    private List<CountProduct> countProductList;
+
+    public List<CountProduct> getCountProductList() {
+        return countProductList;
+    }
+
+    public void setCountProductList(List<CountProduct> countProductList) {
+        this.countProductList = countProductList;
+    }
 
     public Integer getId() {
         return id;
@@ -86,13 +94,5 @@ public class UserOrderDTO {
 
     public void setStatus(Status status) {
         this.status = status;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
     }
 }
