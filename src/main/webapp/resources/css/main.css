@@ -6,16 +6,10 @@
     height: 80px;
 }
 
-.logocon {
-    height: 80px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 .logo {
-    height: 70px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    height: 60px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .info {
@@ -43,6 +37,10 @@
 .menu:hover {
     background-color: #48d148;
     text-align: center;
+}
+.productall{
+    min-height: 650px;
+    max-height: 100%;
 }
 
 .product {
@@ -85,7 +83,7 @@
 }
 
 .footer {
-    margin-top: 50px;
+    margin-top: 120px;
     margin-bottom: 0px;
     height: 95px;
     background-color: #222222;

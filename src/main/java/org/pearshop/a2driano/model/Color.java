@@ -11,7 +11,8 @@ public enum Color {
     GRAY("gray"),
     SILVER("silver"),
     GOLD("gold"),
-    ROSEGOLD("rose gold");
+    ROSEGOLD("rose gold"),
+    PEARL("pearl");
 
     private String color;
 
