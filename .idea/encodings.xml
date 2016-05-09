@@ -13,7 +13,6 @@
     <file url="file://$PROJECT_DIR$/src/main/java/org/pearshop/a2driano/model/web/UserOrderDTO.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources/populate.sql" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/resources/js/lib/jquery.min.js" charset="windows-1251" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
