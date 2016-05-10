@@ -30,12 +30,4 @@ public class MainController {
         System.out.println(modelAndView);
         return modelAndView;
     }
-//    @RequestMapping(value = "/", method = RequestMethod.GET)
-//    @ResponseBody
-//    public List<ProductDTO> start(){
-////        ModelAndView modelAndView = new ModelAndView("index");
-//        List<ProductDTO> productDTOList=productService.getAll();
-////        modelAndView.addObject("productList", productService.getAll());
-//        return productDTOList;
-//    }
 }

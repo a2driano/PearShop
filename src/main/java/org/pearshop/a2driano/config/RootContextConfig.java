@@ -44,7 +44,9 @@ public class RootContextConfig {
     public DataSourceInitializer dataSourceInitializer(DriverManagerDataSource dataSource) {
         ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
         populator.setSqlScriptEncoding("utf8");
-        populator.addScript(new ClassPathResource("populate.sql"));
+        populator.addScript(new ClassPathResource("iphone.sql"));
+        populator.addScript(new ClassPathResource("ipad.sql"));
+        populator.addScript(new ClassPathResource("iwatch.sql"));
         DataSourceInitializer initializer = new DataSourceInitializer();
         initializer.setDataSource(dataSource);
         initializer.setDatabasePopulator(populator);

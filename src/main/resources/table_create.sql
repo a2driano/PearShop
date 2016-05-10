@@ -1,9 +1,0 @@
--- INSERT INTO order (id, firstname, lastname, email, phone, description, date, status) VALUES (
---   1
---   , 'Антон'
---   , 'Шевченко'
---   , 'antoha1989@gmail.com'
---   , '380991568745'
---   , '+доставка по адресу: дом Пушкина, ул. Колотушкина'
---   , '01 Jan 2016'
---   , 'completed');
