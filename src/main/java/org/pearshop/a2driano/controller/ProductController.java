@@ -30,6 +30,7 @@ public class ProductController {
     }
 
     @RequestMapping(value = "/{category}/{id}", method = RequestMethod.GET)
+    @ResponseBody
     public ProductDTO getProductByArticle(@PathVariable("category") Category category,
                                           @PathVariable("id") Integer id) {
         return productService.getProductByArticle(id);

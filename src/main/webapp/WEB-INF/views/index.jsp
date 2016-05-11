@@ -39,14 +39,12 @@
 </div>
 <div class="container productall">
     <c:forEach items="${productList}" var="productDTO">
-        <div class="col-md-3 product" index=${productDTO.id} categoty=${productDTO.category}>
+        <div class="col-md-3 product" index=${productDTO.id} category=${productDTO.category}>
             <div class="row text-center"><img class="imagesmall" src="/resources/img/product/${productDTO.article}.jpg">
             </div>
             <h4 class="textinfo">${productDTO.name}</h4>
 
-            <h3 class="text-right price">
-                <%--<fmt:formatNumber type="number" maxFractionDigits="2" value="${productDTO.price}"/> грн</h3>--%>
-                ${productDTO.price}0 грн</h3>
+            <h3 class="text-right price">${productDTO.price}0 грн</h3>
 
             <div class="arrow">Подробнее...</div>
         </div>
@@ -60,6 +58,26 @@
     <%--<div class="arrow">Подробнее...</div>--%>
     <%--</div>--%>
 </div>
+<%--<div class="container current index='' category=''">--%>
+    <%--<div class="col-lg-4 imagebig">--%>
+        <%--<img class="big" src="/resources/img/product/100001.jpg">--%>
+    <%--</div>--%>
+    <%--<div class="col-lg-8 infocurrent">--%>
+        <%--<div class="row">--%>
+            <%--<h1>Планшет iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h1>--%>
+            <%--<p>Артикул: 100001</p>--%>
+        <%--</div>--%>
+        <%--&lt;%&ndash;<div class="row"></div>&ndash;%&gt;--%>
+        <%--<div class="row">--%>
+            <%--<p>Экран 9.7" Retina (2048 x 1536 точек) с IPS-матрицей/ 16 млн. цветов / Apple A8X / камера 8 Мп + фронтальная 1.2 Мп / Bluetooth 4.0 / Wi-Fi 802.11 a/b/g/n/ac / 64 ГБ встроенной памяти / iOS 8.1 / 240 x 169.5 x 6.1 мм, 437 г / серебристый</p>--%>
+            <%--<p>На товар предоставляется гарантия 12 месяцев</p>--%>
+        <%--</div>--%>
+        <%--<div class="row">--%>
+            <%--<div class="price-product">11000 грн.</div>--%>
+            <%--<div class="btn btn-success btn-lg button-price">КУПИТЬ</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
+<%--</div>--%>
 <div class="container-fluid footer">
     <div class="container">
         <div class="col-md-4">

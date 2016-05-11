@@ -80,6 +80,28 @@
     text-align: center;
 }
 
+.current {
+    height: 600px;
+    margin-top: 40px;
+}
+
+.imagebig {
+    height: 400px;
+}
+
+.big {
+    width: 100%;
+}
+
+.infocurrent {
+    height: 400px;
+}
+
+.price-product {
+    margin-top: 20px;
+    font-size: 300%;
+}
+
 .textinfo {
     color: #1702ff;
 }
