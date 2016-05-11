@@ -46,10 +46,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductDTO getProductByArticle(Integer article) {
+    public ProductDTO getProductByArticle(Integer id) {
         ProductDTO productDTO = new ProductDTO();
         try {
-            productDTO = convertProductToProductDTO(productRepository.getProductByArticle(article));
+            productDTO = convertProductToProductDTO(productRepository.getProductById(id));
         } catch (Exception e) {
             System.err.println(e);
         }

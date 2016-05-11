@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -23,13 +24,14 @@ public class ProductController {
     private ProductService productService;
 
     @RequestMapping(value = "/{category}", method = RequestMethod.GET)
+    @ResponseBody
     public List<ProductDTO> getAllProductByCategory(@PathVariable("category") Category category) {
         return productService.getAllByCategory(category);
     }
 
-    @RequestMapping(value = "/{category}/{article}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{category}/{id}", method = RequestMethod.GET)
     public ProductDTO getProductByArticle(@PathVariable("category") Category category,
-                                          @PathVariable("article") Integer article) {
-        return productService.getProductByArticle(article);
+                                          @PathVariable("id") Integer id) {
+        return productService.getProductByArticle(id);
     }
 }

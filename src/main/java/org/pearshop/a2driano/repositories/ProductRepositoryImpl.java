@@ -31,9 +31,9 @@ public class ProductRepositoryImpl implements ProductRepository {
     }
 
     @Override
-    public Product getProductByArticle(Integer article) {
-        return (Product)entityManager.createNamedQuery("GetProductByArticle")
-                .setParameter("article", article).getSingleResult();
+    public Product getProductById(Integer id) {
+        return (Product)entityManager.createNamedQuery("GetProductById")
+                .setParameter("id", id).getSingleResult();
     }
 
     @Override

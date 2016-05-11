@@ -16,7 +16,7 @@ public interface ProductRepository {
 
     List<Product> getAllProductByCategory(Category category);
 
-    Product getProductByArticle(Integer article);
+    Product getProductById(Integer id);
 
     void updateProduct(Product product);
 }

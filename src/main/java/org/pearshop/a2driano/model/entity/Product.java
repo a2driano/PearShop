@@ -19,7 +19,7 @@ import java.util.List;
 @NamedQueries({
         @NamedQuery(name = "GetAllProducts", query = "SELECT a FROM Product a"),
         @NamedQuery(name = "GetAllProductsByCategory", query = "SELECT a FROM Product a WHERE a.category = :category"),
-        @NamedQuery(name = "GetProductByArticle", query = "SELECT a FROM Product a WHERE a.article = :article")
+        @NamedQuery(name = "GetProductById", query = "SELECT a FROM Product a WHERE a.id = :id")
 })
 public class Product implements Serializable {
     @Id

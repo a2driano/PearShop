@@ -24,44 +24,34 @@
 </head>
 <body>
 <div class="container header">
-    <div class="col-md-6"><a href="#"><img class="logo" src="/resources/img/logo.svg"/></a></div>
+    <div class="col-md-6"><a href="/"><img class="logo" src="/resources/img/logo.svg"/></a></div>
     <div class="col-md-6"><h3 class="phone">0 800 503 808<br>0 800 503 777</h3></div>
 </div>
 <div class="container-fluid info">
     <div class="container">
-        <a href="#" class="refmenu">
-            <div class="col-md-4 menu"><h2>- iPhone -</h2></div>
-        </a>
-        <a href="#" class="refmenu">
-            <div class="col-md-4 menu"><h2>- iPad -</h2></div>
-        </a>
-        <a href="#" class="refmenu">
-            <div class="col-md-4 menu"><h2>- iWatch -</h2></div>
-        </a>
+        <div class="col-md-4 menu" index="IPHONE"><h2>- iPhone -</h2></div>
+        <div class="col-md-4 menu" index="IPAD"><h2>- iPad -</h2></div>
+        <div class="col-md-4 menu" index="IWATCH"><h2>- iWatch -</h2></div>
     </div>
 </div>
 <div class="container text-center">
-    <h1>ПОПУЛЯРНЫЕ ТОВАРЫ</h1>
+    <h1 class="header-product">ПОПУЛЯРНЫЕ ТОВАРЫ</h1>
 </div>
 <div class="container productall">
     <c:forEach items="${productList}" var="productDTO">
-        <div class="col-md-3 product index=${productDTO.id}">
-            <div class="row text-center"><img class="imagesmall" src="/resources/img/product/${productDTO.article}.jpg"></div>
+        <div class="col-md-3 product" index=${productDTO.id} categoty=${productDTO.category}>
+            <div class="row text-center"><img class="imagesmall" src="/resources/img/product/${productDTO.article}.jpg">
+            </div>
             <h4 class="textinfo">${productDTO.name}</h4>
+
             <h3 class="text-right price">
-                <fmt:formatNumber type="number" maxFractionDigits="2" value="${productDTO.price}"/> грн</h3>
+                <%--<fmt:formatNumber type="number" maxFractionDigits="2" value="${productDTO.price}"/> грн</h3>--%>
+                ${productDTO.price}0 грн</h3>
+
             <div class="arrow">Подробнее...</div>
         </div>
     </c:forEach>
     <%--<div class="col-md-3 product">--%>
-        <%--<div class="row text-center"><img class="imagesmall" src="/resources/img/1.jpg"></div>--%>
-        <%--<h4 class="textinfo">iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h4>--%>
-
-        <%--<h3 class="text-right price">11000 грн.</h3>--%>
-
-        <%--<div class="arrow">Подробнее...</div>--%>
-    <%--</div>--%>
-    <%--<div class="col-md-3 product">--%>
     <%--<div class="row text-center"><img class="imagesmall" src="/resources/img/1.jpg"></div>--%>
     <%--<h4 class="textinfo">iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h4>--%>
 
@@ -69,55 +59,6 @@
 
     <%--<div class="arrow">Подробнее...</div>--%>
     <%--</div>--%>
-    <%--<div class="col-md-3 product">--%>
-    <%--<div class="row text-center"><img class="imagesmall" src="/resources/img/1.jpg"></div>--%>
-    <%--<h4 class="textinfo">iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h4>--%>
-
-    <%--<h3 class="text-right price">11000 грн.</h3>--%>
-
-    <%--<div class="arrow">Подробнее...</div>--%>
-    <%--</div>--%>
-    <%--<div class="col-md-3 product">--%>
-    <%--<div class="row text-center"><img class="imagesmall" src="/resources/img/1.jpg"></div>--%>
-    <%--<h4 class="textinfo">iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h4>--%>
-
-    <%--<h3 class="text-right price">11000 грн.</h3>--%>
-
-    <%--<div class="arrow">Подробнее...</div>--%>
-    <%--</div>--%>
-    <%--<div class="col-md-3 product">--%>
-    <%--<div class="row text-center"><img class="imagesmall" src="/resources/img/1.jpg"></div>--%>
-    <%--<h4 class="textinfo">iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h4>--%>
-
-    <%--<h3 class="text-right price">11000 грн.</h3>--%>
-
-    <%--<div class="arrow">Подробнее...</div>--%>
-    <%--</div>--%>
-    <%--<div class="col-md-3 product">--%>
-    <%--<div class="row text-center"><img class="imagesmall" src="/resources/img/1.jpg"></div>--%>
-    <%--<h4 class="textinfo">iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h4>--%>
-
-    <%--<h3 class="text-right price">11000 грн.</h3>--%>
-
-    <%--<div class="arrow">Подробнее...</div>--%>
-    <%--</div>--%>
-    <%--<div class="col-md-3 product">--%>
-    <%--<div class="row text-center"><img class="imagesmall" src="/resources/img/1.jpg"></div>--%>
-    <%--<h4 class="textinfo">iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h4>--%>
-
-    <%--<h3 class="text-right price">11000 грн.</h3>--%>
-
-    <%--<div class="arrow">Подробнее...</div>--%>
-    <%--</div>--%>
-    <%--<div class="col-md-3 product">--%>
-    <%--<div class="row text-center"><img class="imagesmall" src="/resources/img/1.jpg"></div>--%>
-    <%--<h4 class="textinfo">iPad Air 2 Wi-Fi + LTE 16GB Space Gray</h4>--%>
-
-    <%--<h3 class="text-right price">11000 грн.</h3>--%>
-
-    <%--<div class="arrow">Подробнее...</div>--%>
-    <%--</div>--%>
-
 </div>
 <div class="container-fluid footer">
     <div class="container">
