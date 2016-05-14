@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * @version 1.0
@@ -17,6 +18,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class UserOrderController {
     @Autowired
     private UserOrderService userOrderService;
+
+    @RequestMapping(value = "/order", method = RequestMethod.POST)
+    public ModelAndView returnOrder(UserOrderDTO userOrderDTO) {
+        ModelAndView modelAndView=new ModelAndView("order");
+        modelAndView.addObject("data", userOrderDTO);
+        return modelAndView;
+    }
 
     @RequestMapping(value = "/addOrder", method = RequestMethod.POST)
     public void addOrder(UserOrderDTO userOrderDTO) {

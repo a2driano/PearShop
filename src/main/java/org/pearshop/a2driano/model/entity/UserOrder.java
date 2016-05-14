@@ -27,7 +27,7 @@ public class UserOrder implements Serializable {
     @Column(name = "firstname", unique = false, nullable = false, length = 100)
     private String firstname;
 
-    @Column(name = "lastname", unique = false, nullable = false, length = 100)
+    @Column(name = "lastname", unique = false, length = 100)
     private String lastname;
 
     @Column(name = "email", unique = false, nullable = false, length = 100)

@@ -30,14 +30,10 @@
     <div class="col-md-6"><h3 class="phone">0 800 503 808<br>0 800 503 777</h3></div>
 </div>
 <div class="container-fluid info">
-    <div class="container">
-        <div class="col-md-4 menu" index="IPHONE"><h2>- iPhone -</h2></div>
-        <div class="col-md-4 menu" index="IPAD"><h2>- iPad -</h2></div>
-        <div class="col-md-4 menu" index="IWATCH"><h2>- iWatch -</h2></div>
-    </div>
+
 </div>
 <div class="container text-center">
-    <h1 class="header-product">ПОПУЛЯРНЫЕ ТОВАРЫ</h1>
+    <h1 class="header-product">ЗАКАЗЫ</h1>
 </div>
 <div class="container productall">
     <c:forEach items="${productList}" var="productDTO">
@@ -52,40 +48,6 @@
         </div>
     </c:forEach>
 </div>
-<div class="container order-form">
-    <div class="col-lg-4"></div>
-    <div class="col-lg-4">
-        <form class="form-group-md">
-            <fieldset class="row form-group order-row">
-                <label for="firstname">*Имя:</label>
-                <input class="form-control" name="firstname" type="text" maxlength="25" size="40"
-                       placeholder="Введите ваше имя"></fieldset>
-            <fieldset class="row form-group order-row">
-                <label for="lastname">Фамилия:</label>
-                <input class="form-control" name="lastname" type="email" maxlength="25" size="40"
-                       placeholder="Введите вашу фамилию"></fieldset>
-            <fieldset class="row form-group order-row">
-                <label for="email">*Е-mail:</label>
-                <input class="form-control" name="email" type="email" maxlength="25" size="50" placeholder="e-mail">
-            </fieldset>
-            <fieldset class="row form-group order-row">
-                <label for="phone">*Телефон (в формате '380007778899'):</label>
-                <input class="form-control" name="phone" type="text" maxlength="12" size="40"
-                       placeholder="введите контактный номер телефона"></fieldset>
-            <fieldset class="row form-group order-row">
-                <label for="description">Дополнительная информация:</label>
-                <textarea class="form-control" rows="10" cols="39" name="description" maxlength="500"></textarea>
-
-                <p>*-поля обязательные для заполнения</p>
-            </fieldset>
-            <div class="row text-center order-row">
-                <div id="send" class="btn btn-success btn-lg button-order">КУПИТЬ</div>
-            </div>
-        </form>
-    </div>
-    <div class="col-lg-4"></div>
-</div>
-
 <div class="container-fluid footer">
     <div class="container">
         <div class="col-md-4">
@@ -97,6 +59,21 @@
         </h6></div>
         <div class="col-md-4"><h4>0 800 503 808<br>0 800 503 777</h4>
             <h6>Магазин разработан и поддерживается a2driano©</h6></div>
+    </div>
+</div>
+<div class="modal" id="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Заказ</h2>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
     </div>
 </div>
 </body>

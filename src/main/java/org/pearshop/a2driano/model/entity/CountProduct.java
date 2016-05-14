@@ -19,6 +19,9 @@ public class CountProduct {
     @Column(name = "count", nullable = false)
     private Integer count;
 
+    @Column(name = "sumcount", nullable = false)
+    private Integer sumCount;
+
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
@@ -26,6 +29,14 @@ public class CountProduct {
     @ManyToOne
     @JoinColumn(name = "order_id")
     private UserOrder userOrder;
+
+    public Integer getSumCount() {
+        return sumCount;
+    }
+
+    public void setSumCount(Integer sumCount) {
+        this.sumCount = sumCount;
+    }
 
     public Integer getCount() {
         return count;
