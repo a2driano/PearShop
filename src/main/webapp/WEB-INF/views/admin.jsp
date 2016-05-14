@@ -36,13 +36,15 @@
     <h1 class="header-product">ЗАКАЗЫ</h1>
 </div>
 <div class="container productall">
-    <c:forEach items="${productList}" var="productDTO">
-        <div class="col-md-3 product" index=${productDTO.id} category=${productDTO.category}>
-            <div class="row text-center"><img class="imagesmall" src="/resources/img/product/${productDTO.article}.jpg">
+    <c:forEach items="${userOrderList}" var="userOrderList">
+        <div class="col-md-3 product" index=${userOrderList.id} category=${userOrderList.firstname}>
+            <div class="row text-center"><img class="imagesmall" src="/resources/img/product/${userOrderList.lastname}.jpg">
             </div>
-            <h4 class="textinfo">${productDTO.name}</h4>
+            <h4 class="textinfo">${userOrderList.email}</h4>
+            <h4 class="textinfo">${userOrderList.date}</h4>
+            <%--<h4 class="textinfo">${userOrderList.category}</h4>--%>
 
-            <h3 class="text-right price">${productDTO.price}0 грн</h3>
+            <h3 class="text-right price">${userOrderList.phone}</h3>
 
             <div class="arrow">Подробнее...</div>
         </div>

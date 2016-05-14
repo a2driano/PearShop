@@ -25,7 +25,6 @@ public class MainController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView start(){
         ModelAndView modelAndView = new ModelAndView("index");
-//        modelAndView.addObject("message", "WELCOME TO PEARSHOP!");
         modelAndView.addObject("productList", productService.getAll());
         System.out.println(modelAndView);
         return modelAndView;

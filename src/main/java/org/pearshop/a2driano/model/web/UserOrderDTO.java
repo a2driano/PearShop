@@ -1,8 +1,13 @@
 package org.pearshop.a2driano.model.web;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.pearshop.a2driano.model.Status;
 import org.pearshop.a2driano.model.entity.CountProduct;
+
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -13,16 +18,46 @@ import java.util.List;
  * @since 23.04.2016
  */
 @JsonAutoDetect
-public class UserOrderDTO {
+@JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
+public class UserOrderDTO implements Serializable{
+    @JsonIgnore
     private Integer id;
+    @JsonProperty("firstname")
     private String firstname;
+    @JsonProperty("lastname")
     private String lastname;
+    @JsonProperty("email")
     private String email;
+    @JsonProperty("phone")
     private String phone;
+    @JsonProperty("description")
     private String description;
+    @JsonProperty("date")
     private Date date;
+    @JsonProperty("status")
     private Status status;
+    @JsonIgnore
     private List<CountProduct> countProductList;
+    @JsonProperty("id_product")
+    private Integer idProduct;
+    @JsonProperty("count")
+    private Integer count;
+
+    public Integer getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(Integer idProduct) {
+        this.idProduct = idProduct;
+    }
+
+    public Integer getCount() {
+        return count;
+    }
+
+    public void setCount(Integer count) {
+        this.count = count;
+    }
 
     public List<CountProduct> getCountProductList() {
         return countProductList;

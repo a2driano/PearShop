@@ -4,6 +4,7 @@ import org.pearshop.a2driano.model.web.UserOrderDTO;
 import org.pearshop.a2driano.repositories.UserOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +19,7 @@ import static org.pearshop.a2driano.util.ApplicationUtil.convertUserOrderListToU
  * @since 06.05.2016
  */
 @Service
+@Transactional
 public class UserOrderServiceImpl implements UserOrderService {
     @Autowired
     private UserOrderRepository userOrderRepository;

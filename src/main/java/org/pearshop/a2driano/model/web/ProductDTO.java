@@ -6,6 +6,7 @@ import org.pearshop.a2driano.model.Color;
 import org.pearshop.a2driano.model.Communicator;
 import org.pearshop.a2driano.model.entity.CountProduct;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ import java.util.List;
  * @since 23.04.2016
  */
 @JsonAutoDetect
-public class ProductDTO {
+public class ProductDTO implements Serializable{
     private Integer id;
     private Integer article;
     private Category category;

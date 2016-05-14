@@ -58,23 +58,23 @@
         <form class="form-group-md">
             <fieldset class="row form-group order-row">
                 <label for="firstname">*Имя:</label>
-                <input class="form-control" name="firstname" type="text" maxlength="25" size="40"
+                <input id="firstname" class="form-control" name="firstname" type="text" maxlength="25" size="40"
                        placeholder="Введите ваше имя"></fieldset>
             <fieldset class="row form-group order-row">
                 <label for="lastname">Фамилия:</label>
-                <input class="form-control" name="lastname" type="email" maxlength="25" size="40"
+                <input id="lastname" class="form-control" name="lastname" type="email" maxlength="25" size="40"
                        placeholder="Введите вашу фамилию"></fieldset>
             <fieldset class="row form-group order-row">
                 <label for="email">*Е-mail:</label>
-                <input class="form-control" name="email" type="email" maxlength="25" size="50" placeholder="e-mail">
+                <input id="email" class="form-control" name="email" type="email" maxlength="25" size="50" placeholder="e-mail">
             </fieldset>
             <fieldset class="row form-group order-row">
                 <label for="phone">*Телефон (в формате '380007778899'):</label>
-                <input class="form-control" name="phone" type="text" maxlength="12" size="40"
+                <input id="phone" class="form-control" name="phone" type="text" maxlength="12" size="40"
                        placeholder="введите контактный номер телефона"></fieldset>
             <fieldset class="row form-group order-row">
                 <label for="description">Дополнительная информация:</label>
-                <textarea class="form-control" rows="10" cols="39" name="description" maxlength="500"></textarea>
+                <textarea id="description" class="form-control" rows="10" cols="39" name="description" maxlength="500"></textarea>
 
                 <p>*-поля обязательные для заполнения</p>
             </fieldset>
