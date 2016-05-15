@@ -11,6 +11,7 @@ var onStart = function () {
     /**select category*/
     $('.menu').on('click', function () {
         var category = $(this).attr('index');
+        $('.form-control').val('');
         $('.order-form').hide();
         $.ajax({
             url: $hostRoot + category,
@@ -42,6 +43,7 @@ var onStart = function () {
     /**select product*/
     $('.productall').on('click', '.product', function () {
         $('.order-form').hide();
+        $('.form-control').val('');
         var data = {
             category: $(this).attr('category'),
             id: $(this).attr('index')
@@ -78,7 +80,6 @@ var onStart = function () {
 
     /**add order*/
     $('.order-form').on('click', '#send', function () {
-        //var count=priceProduct;
         var data = {
             firstname: $('#firstname').val(),
             lastname: $('#lastname').val(),
@@ -91,8 +92,6 @@ var onStart = function () {
             count: $('#count_product').val()
 
         };
-        //var count=priceProduct;
-        //var id=$('.current').attr('index');
         console.log(data);
         $.ajax({
             url: $hostRoot + 'addOrder',
@@ -101,11 +100,12 @@ var onStart = function () {
             contentType: 'application/json',
             data: JSON.stringify(data),
             success: function (response) {
-                    //alert('Заказ получен, менеджер свяжиться с Вами в ближайшее время!');
+                //alert('Заказ получен, менеджер свяжиться с Вами в ближайшее время!');
                 console.log('Заказ получен, менеджер свяжиться с Вами в ближайшее время!');
+                //$('.form-control').val('');
             },
             error: function (error) {
-                console.log('ERROR:'+ error);
+                console.log('ERROR:' + error);
             }
         });
     });

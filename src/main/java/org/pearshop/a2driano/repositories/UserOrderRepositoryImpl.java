@@ -24,8 +24,10 @@ public class UserOrderRepositoryImpl implements UserOrderRepository {
     }
 
     @Override
-    public void addUserOrder(UserOrder userOrder) {
+    public UserOrder addUserOrder(UserOrder userOrder) {
         entityManager.persist(userOrder);
+        entityManager.flush();
+        return userOrder;
     }
 
     @Override

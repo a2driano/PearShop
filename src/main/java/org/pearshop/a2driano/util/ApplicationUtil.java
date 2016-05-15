@@ -1,7 +1,9 @@
 package org.pearshop.a2driano.util;
 
+import org.pearshop.a2driano.model.entity.CountProduct;
 import org.pearshop.a2driano.model.entity.Product;
 import org.pearshop.a2driano.model.entity.UserOrder;
+import org.pearshop.a2driano.model.web.CountProductDTO;
 import org.pearshop.a2driano.model.web.ProductDTO;
 import org.pearshop.a2driano.model.web.UserOrderDTO;
 
@@ -75,7 +77,46 @@ public class ApplicationUtil {
         for (UserOrder userOrder : userOrderList) {
             userOrderDTOList.add(convertUserOrderToUserOrderDTO(userOrder));
         }
+
         return userOrderDTOList;
+    }
+
+    public static CountProduct convertCountProductDTOToCountProduct(CountProductDTO countProductDTO) {
+        CountProduct countProduct = new CountProduct();
+        countProduct.setId(countProductDTO.getId());
+        countProduct.setCount(countProductDTO.getCount());
+        countProduct.setSumCount(countProductDTO.getSumCount());
+        countProduct.setProduct(countProductDTO.getProduct());
+        countProduct.setUserOrder(countProductDTO.getUserOrder());
+
+        return countProduct;
+    }
+
+    public static List<CountProduct> convertCountProductDTOListToCountProductList(List<CountProductDTO> countProductDTOList){
+        List<CountProduct> countProductList=new ArrayList<>();
+        for(CountProductDTO countProductDTO: countProductDTOList){
+            countProductList.add(convertCountProductDTOToCountProduct(countProductDTO));
+        }
+        return countProductList;
+    }
+
+    public static CountProductDTO convertCountProductToCountProductDTO(CountProduct countProduct) {
+        CountProductDTO countProductDTO = new CountProductDTO();
+        countProductDTO.setId(countProduct.getId());
+        countProductDTO.setCount(countProduct.getCount());
+        countProductDTO.setSumCount(countProduct.getSumCount());
+        countProductDTO.setProduct(countProduct.getProduct());
+        countProductDTO.setUserOrder(countProduct.getUserOrder());
+
+        return countProductDTO;
+    }
+
+    public static List<CountProductDTO> convertCountProductListToCountProductDTOList(List<CountProduct> countProductList){
+        List<CountProductDTO> countProductDTOList=new ArrayList<>();
+        for(CountProduct countProduct: countProductList){
+            countProductDTOList.add(convertCountProductToCountProductDTO(countProduct));
+        }
+        return countProductDTOList;
     }
 
 }

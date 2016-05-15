@@ -1,6 +1,10 @@
 package org.pearshop.a2driano.service;
 
+import org.pearshop.a2driano.model.entity.CountProduct;
+import org.pearshop.a2driano.model.entity.UserOrder;
 import org.pearshop.a2driano.model.web.UserOrderDTO;
+import org.pearshop.a2driano.repositories.CountProductRepository;
+import org.pearshop.a2driano.repositories.ProductRepository;
 import org.pearshop.a2driano.repositories.UserOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +27,10 @@ import static org.pearshop.a2driano.util.ApplicationUtil.convertUserOrderListToU
 public class UserOrderServiceImpl implements UserOrderService {
     @Autowired
     private UserOrderRepository userOrderRepository;
+    @Autowired
+    private ProductRepository productRepository;
+    @Autowired
+    private CountProductRepository countProductRepository;
 
     @Override
     public List<UserOrderDTO> getUserOrderList() {
@@ -38,7 +46,13 @@ public class UserOrderServiceImpl implements UserOrderService {
     @Override
     public void addUserOrder(UserOrderDTO userOrderDTO) {
         try {
-            userOrderRepository.addUserOrder(convertUserOrderDTOToUserOrder(userOrderDTO));
+            //set Count product
+            CountProduct countProduct = new CountProduct();
+            countProduct.setProduct(productRepository.getProductById(userOrderDTO.getIdProduct()));
+            countProduct.setCount(userOrderDTO.getCount());
+            countProduct.setSumCount(countProduct.getProduct().getPrice() * userOrderDTO.getCount());
+            countProduct.setUserOrder(userOrderRepository.addUserOrder(convertUserOrderDTOToUserOrder(userOrderDTO)));
+            countProductRepository.addCountProduct(countProduct);
         } catch (Exception e) {
             System.err.println(e);
         }

@@ -1,5 +1,6 @@
 package org.pearshop.a2driano.model.entity;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.pearshop.a2driano.model.Status;
 
 import javax.persistence.*;
@@ -21,7 +22,9 @@ import java.util.List;
 public class UserOrder implements Serializable {
     @Id
     @Column(name = "order_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GenericGenerator(name="kaugen" , strategy="increment")
+    @GeneratedValue(generator="kaugen")
     private Integer id;
 
     @Column(name = "firstname", unique = false, nullable = false, length = 100)

@@ -36,15 +36,22 @@
     <h1 class="header-product">ЗАКАЗЫ</h1>
 </div>
 <div class="container productall">
-    <c:forEach items="${userOrderList}" var="userOrderList">
-        <div class="col-md-3 product" index=${userOrderList.id} category=${userOrderList.firstname}>
-            <div class="row text-center"><img class="imagesmall" src="/resources/img/product/${userOrderList.lastname}.jpg">
+    <c:forEach items="${countProductList}" var="countProductList">
+        <div class="col-md-3 product" index=${countProductList.id}>
+            <div class="row text-center">
+                <%--<img class="imagesmall" src="/resources/img/product/${countProductList.lastname}.jpg">--%>
             </div>
-            <h4 class="textinfo">${userOrderList.email}</h4>
-            <h4 class="textinfo">${userOrderList.date}</h4>
-            <%--<h4 class="textinfo">${userOrderList.category}</h4>--%>
+            <h4 class="textinfo">Product id: ${countProductList.product.id}</h4>
+            <h4 class="textinfo">Product article: ${countProductList.product.article}</h4>
+            <h4 class="textinfo">Product name: ${countProductList.product.name}</h4>
+            <h4 class="textinfo">Product price: ${countProductList.product.price}</h4>
+            <h4 class="textinfo">Order count: ${countProductList.count}</h4>
+            <h4 class="textinfo">Order price: ${countProductList.sumCount}</h4>
+            <h4 class="textinfo">Order Id: ${countProductList.userOrder.id}</h4>
+            <h4 class="textinfo">Order status: ${countProductList.userOrder.status}</h4>
 
-            <h3 class="text-right price">${userOrderList.phone}</h3>
+            <h3 class="text-right price">${countProductList.userOrder.phone}</h3>
+            <h3 class="text-right price">${countProductList.userOrder.date}</h3>
 
             <div class="arrow">Подробнее...</div>
         </div>

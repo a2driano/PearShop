@@ -10,6 +10,9 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "countproduct")
+@NamedQueries({
+        @NamedQuery(name = "GetAllCountProduct", query = "SELECT a FROM CountProduct a")
+})
 public class CountProduct {
     @Id
     @Column(name = "count_id")
@@ -20,7 +23,7 @@ public class CountProduct {
     private Integer count;
 
     @Column(name = "sumcount", nullable = false)
-    private Integer sumCount;
+    private Double sumCount;
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -30,11 +33,11 @@ public class CountProduct {
     @JoinColumn(name = "order_id")
     private UserOrder userOrder;
 
-    public Integer getSumCount() {
+    public Double getSumCount() {
         return sumCount;
     }
 
-    public void setSumCount(Integer sumCount) {
+    public void setSumCount(Double sumCount) {
         this.sumCount = sumCount;
     }
 
@@ -68,5 +71,8 @@ public class CountProduct {
 
     public void setUserOrder(UserOrder userOrder) {
         this.userOrder = userOrder;
+
     }
+
+
 }
