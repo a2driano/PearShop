@@ -1,5 +1,6 @@
 package org.pearshop.a2driano.service;
 
+import org.pearshop.a2driano.model.entity.CountProduct;
 import org.pearshop.a2driano.model.web.CountProductDTO;
 import org.pearshop.a2driano.repositories.CountProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ import static org.pearshop.a2driano.util.ApplicationUtil.convertCountProductList
 public class CountProductServiceImpl implements CountProductService {
     @Autowired
     private CountProductRepository countProductRepository;
+    @Autowired
+    private UserOrderService userOrderService;
 
     @Override
     public List<CountProductDTO> getAllCountProduct() {
@@ -31,4 +34,11 @@ public class CountProductServiceImpl implements CountProductService {
         }
         return countProductDTOList;
     }
+
+    @Override
+    public CountProduct getCountProduct(Integer id) {
+        return countProductRepository.getCountProductById(id);
+    }
+
+
 }

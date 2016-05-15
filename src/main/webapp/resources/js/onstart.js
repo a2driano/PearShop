@@ -4,6 +4,7 @@
 $(document).ready(function () {
     onStart();
     clickPrice();
+    //changeStatus();
     $('.order-form').hide();
 });
 var priceProduct;
@@ -102,7 +103,38 @@ var onStart = function () {
             success: function (response) {
                 //alert('Заказ получен, менеджер свяжиться с Вами в ближайшее время!');
                 console.log('Заказ получен, менеджер свяжиться с Вами в ближайшее время!');
-                //$('.form-control').val('');
+            },
+            error: function (error) {
+                console.log('ERROR:' + error);
+            }
+        });
+    });
+
+
+    /**add selector of status*/
+    $('.change-status').click(function() {
+        $(this).hide();
+        $(this).parent().append('<td id="status-order-select" class="alert-danger center-block"><select id="select-status" class="form-control">'+
+        '<option value="ACTIVE">ACTIVE</option><option value="COMPLETED">COMPLETED</option><option value="CANCELED">CANCELED</option></select></td>');
+        $(this).parent().next('.button-container').children('.save-status').removeAttr("disabled");
+    });
+
+    /**save status*/
+    $('.save-status').on('click',function () {
+        var data = {
+            id: $(this).attr('index'),
+            status: $('#select-status :selected').val()
+        };
+        console.log(data);
+        $.ajax({
+            url: $hostRoot + 'admin/update',
+            type: 'post',
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (response) {
+                console.log('Update success');
+                location.href = $hostRoot+"admin";
             },
             error: function (error) {
                 console.log('ERROR:' + error);
@@ -117,6 +149,7 @@ function clickPrice() {
     $('.order-form').show(200);
     $('.productall').append('');
 };
+
 
 
 

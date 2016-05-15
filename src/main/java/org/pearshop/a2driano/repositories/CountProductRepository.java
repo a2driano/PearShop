@@ -14,4 +14,6 @@ public interface CountProductRepository {
     List<CountProduct> getAllCountProducts();
 
     void addCountProduct(CountProduct countProduct);
+
+    CountProduct getCountProductById(Integer id);
 }

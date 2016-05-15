@@ -1,5 +1,7 @@
 package org.pearshop.a2driano.service;
 
+import org.pearshop.a2driano.model.Status;
+import org.pearshop.a2driano.model.entity.UserOrder;
 import org.pearshop.a2driano.model.web.UserOrderDTO;
 
 import java.util.List;
@@ -19,6 +21,8 @@ public interface UserOrderService {
      */
     List<UserOrderDTO> getUserOrderList();
 
+    UserOrderDTO getUserOrder(Integer id);
+
     /**
      * Add new order
      *
@@ -29,7 +33,8 @@ public interface UserOrderService {
     /**
      * Update order
      *
-     * @param userOrderDTO
+     * @param id
+     * @param status
      */
-    void updateUserOrder(UserOrderDTO userOrderDTO);
+    void updateUserOrder(Integer id, Status status);
 }

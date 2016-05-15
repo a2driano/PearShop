@@ -8,6 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>PearShop</title>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/main.css"/>"/>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/admin.css"/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap/bootstrap.min.css"/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/bootstrap/bootstrap-theme.min.css"/>"/>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/css/FontAwesome/font-awesome.css"/>"/>
@@ -35,28 +36,47 @@
 <div class="container text-center">
     <h1 class="header-product">ЗАКАЗЫ</h1>
 </div>
-<div class="container productall">
-    <c:forEach items="${countProductList}" var="countProductList">
-        <div class="col-md-3 product" index=${countProductList.id}>
-            <div class="row text-center">
-                <%--<img class="imagesmall" src="/resources/img/product/${countProductList.lastname}.jpg">--%>
-            </div>
-            <h4 class="textinfo">Product id: ${countProductList.product.id}</h4>
-            <h4 class="textinfo">Product article: ${countProductList.product.article}</h4>
-            <h4 class="textinfo">Product name: ${countProductList.product.name}</h4>
-            <h4 class="textinfo">Product price: ${countProductList.product.price}</h4>
-            <h4 class="textinfo">Order count: ${countProductList.count}</h4>
-            <h4 class="textinfo">Order price: ${countProductList.sumCount}</h4>
-            <h4 class="textinfo">Order Id: ${countProductList.userOrder.id}</h4>
-            <h4 class="textinfo">Order status: ${countProductList.userOrder.status}</h4>
-
-            <h3 class="text-right price">${countProductList.userOrder.phone}</h3>
-            <h3 class="text-right price">${countProductList.userOrder.date}</h3>
-
-            <div class="arrow">Подробнее...</div>
-        </div>
-    </c:forEach>
+<div class="container">
+    <div class="col-lg-12">
+        <table id="order_table" class="table table-bordered table-condensed table-hover">
+            <thead>
+            <tr class="head_table">
+                <td>№</td>
+                <td>Товар</td>
+                <td>К оплате</td>
+                <td>Заказчик</td>
+                <td>E-mail</td>
+                <td>Телефон</td>
+                <td>Дата</td>
+                <td>Заметка к заказу</td>
+                <td>Статус</td>
+                <td>Сохранить</td>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${countProductList}" var="countProductList">
+                <tr class="body_table">
+                    <td index="${countProductList.id}" id="index-order">${countProductList.userOrder.id}</td>
+                    <td index="${countProductList.product.id}">
+                        <p><b>${countProductList.product.name}</b></p>
+                        <p>Стоимость: ${countProductList.product.price}0 грн</p>
+                        <p>Количество: ${countProductList.count} шт</p></td>
+                    <td>${countProductList.sumCount}0 грн</td>
+                    <td>${countProductList.userOrder.firstname}<br>${countProductList.userOrder.lastname}</td>
+                    <td>${countProductList.userOrder.email}</td>
+                    <td>${countProductList.userOrder.phone}</td>
+                    <td>${countProductList.userOrder.date}</td>
+                    <td>${countProductList.userOrder.description}</td>
+                    <td id="status-order" class="alert-danger text-center">${countProductList.userOrder.status}
+                    <button class="btn btn-success btn-sm center-block change-status">Изменить</button></td>
+                    <td class="button-container"><button class="btn btn-success btn-sm center-block save-status" disabled="disabled" index="${countProductList.userOrder.id}">Сохранить</button></td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </div>
+
 <div class="container-fluid footer">
     <div class="container">
         <div class="col-md-4">

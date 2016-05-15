@@ -11,7 +11,8 @@ import javax.persistence.*;
 @Entity
 @Table(name = "countproduct")
 @NamedQueries({
-        @NamedQuery(name = "GetAllCountProduct", query = "SELECT a FROM CountProduct a")
+        @NamedQuery(name = "GetAllCountProduct", query = "SELECT a FROM CountProduct a"),
+        @NamedQuery(name = "GetCountProductById", query = "SELECT a FROM CountProduct a WHERE a.id=:id")
 })
 public class CountProduct {
     @Id

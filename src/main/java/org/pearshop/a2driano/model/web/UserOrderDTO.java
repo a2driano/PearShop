@@ -20,7 +20,7 @@ import java.util.List;
 @JsonAutoDetect
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
 public class UserOrderDTO implements Serializable{
-    @JsonIgnore
+//    @JsonIgnore
     private Integer id;
     @JsonProperty("firstname")
     private String firstname;

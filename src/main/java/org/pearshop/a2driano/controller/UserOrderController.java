@@ -32,9 +32,4 @@ public class UserOrderController {
         userOrderService.addUserOrder(userOrderDTO);
         return new UserOrderDTO();
     }
-
-    @RequestMapping(value = "/updateOrder", method = RequestMethod.POST)
-    public void updateOrder(UserOrderDTO userOrderDTO) {
-        userOrderService.updateUserOrder(userOrderDTO);
-    }
 }

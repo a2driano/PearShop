@@ -14,6 +14,8 @@ import java.util.List;
 public interface UserOrderRepository {
     List<UserOrder> getAllUserOrder();
 
+    UserOrder getUserOrderById(Integer id);
+
     UserOrder addUserOrder(UserOrder userOrder);
 
     void updateUserOrder(UserOrder userOrder);

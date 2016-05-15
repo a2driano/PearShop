@@ -1,5 +1,6 @@
 package org.pearshop.a2driano.service;
 
+import org.pearshop.a2driano.model.Status;
 import org.pearshop.a2driano.model.entity.CountProduct;
 import org.pearshop.a2driano.model.entity.UserOrder;
 import org.pearshop.a2driano.model.web.UserOrderDTO;
@@ -15,6 +16,7 @@ import java.util.List;
 
 import static org.pearshop.a2driano.util.ApplicationUtil.convertUserOrderDTOToUserOrder;
 import static org.pearshop.a2driano.util.ApplicationUtil.convertUserOrderListToUserOrderDTOList;
+import static org.pearshop.a2driano.util.ApplicationUtil.convertUserOrderToUserOrderDTO;
 
 /**
  * @version 1.0
@@ -44,6 +46,17 @@ public class UserOrderServiceImpl implements UserOrderService {
     }
 
     @Override
+    public UserOrderDTO getUserOrder(Integer id) {
+        UserOrderDTO userOrderDTO=new UserOrderDTO();
+        try {
+            userOrderDTO=convertUserOrderToUserOrderDTO(userOrderRepository.getUserOrderById(id));
+        } catch (Exception e) {
+            System.err.println(e);
+        }
+        return userOrderDTO;
+    }
+
+    @Override
     public void addUserOrder(UserOrderDTO userOrderDTO) {
         try {
             //set Count product
@@ -59,9 +72,11 @@ public class UserOrderServiceImpl implements UserOrderService {
     }
 
     @Override
-    public void updateUserOrder(UserOrderDTO userOrderDTO) {
+    public void updateUserOrder(Integer id, Status status) {
         try {
-            userOrderRepository.updateUserOrder(convertUserOrderDTOToUserOrder(userOrderDTO));
+            UserOrder userOrder=userOrderRepository.getUserOrderById(id);
+            userOrder.setStatus(status);
+            userOrderRepository.updateUserOrder(userOrder);
         } catch (Exception e) {
             System.err.println(e);
         }

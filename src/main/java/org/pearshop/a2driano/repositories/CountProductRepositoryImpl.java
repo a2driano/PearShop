@@ -28,4 +28,8 @@ public class CountProductRepositoryImpl implements CountProductRepository {
         entityManager.persist(countProduct);
     }
 
+    @Override
+    public CountProduct getCountProductById(Integer id) {
+        return (CountProduct) entityManager.createNamedQuery("GetCountProductById").setParameter("id", id).getSingleResult();
+    }
 }

@@ -17,14 +17,14 @@ import java.util.List;
 @Entity
 @Table(name = "userorder")
 @NamedQueries({
-        @NamedQuery(name = "GetAllUserOrder", query = "SELECT a FROM UserOrder a")
+        @NamedQuery(name = "GetAllUserOrder", query = "SELECT a FROM UserOrder a"),
+        @NamedQuery(name = "GetUserOrderById", query = "SELECT a FROM UserOrder a WHERE a.id = :id")
 })
 public class UserOrder implements Serializable {
     @Id
     @Column(name = "order_id")
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-    @GenericGenerator(name="kaugen" , strategy="increment")
-    @GeneratedValue(generator="kaugen")
+    @GenericGenerator(name = "kaugen", strategy = "increment")
+    @GeneratedValue(generator = "kaugen")
     private Integer id;
 
     @Column(name = "firstname", unique = false, nullable = false, length = 100)

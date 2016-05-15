@@ -13,4 +13,5 @@ import java.util.List;
  */
 public interface CountProductService {
     List<CountProductDTO> getAllCountProduct();
+    CountProduct getCountProduct(Integer id);
 }

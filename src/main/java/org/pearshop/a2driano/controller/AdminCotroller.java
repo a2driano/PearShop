@@ -1,14 +1,12 @@
 package org.pearshop.a2driano.controller;
 
-import org.pearshop.a2driano.model.entity.CountProduct;
-import org.pearshop.a2driano.model.entity.UserOrder;
+import org.pearshop.a2driano.model.Status;
 import org.pearshop.a2driano.model.web.UserOrderDTO;
 import org.pearshop.a2driano.service.CountProductService;
 import org.pearshop.a2driano.service.UserOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -19,24 +17,22 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class AdminCotroller {
-//    @Autowired
-//    private UserOrderService userOrderService;
+    @Autowired
+    private UserOrderService userOrderService;
     @Autowired
     private CountProductService countProductService;
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     public ModelAndView getAllUserOrders() {
-        ModelAndView modelAndView = new ModelAndView("admin");
-        modelAndView.addObject("countProductList", countProductService.getAllCountProduct());
-        System.err.println(countProductService.getAllCountProduct());
-        return modelAndView;
+        return new ModelAndView("admin").addObject("countProductList", countProductService.getAllCountProduct());
     }
 
-//    @RequestMapping(value = "/admin", method = RequestMethod.GET)
-//    public ModelAndView getAllUserOrders() {
-//        ModelAndView modelAndView = new ModelAndView("admin");
-//        modelAndView.addObject("countProductList", userOrderService.getUserOrderList());
-//        return modelAndView;
-//    }
+    @RequestMapping(value = "/admin/update", method = RequestMethod.POST)
+    @ResponseBody
+    public UserOrderDTO updateUserOrder(@RequestBody UserOrderDTO userOrderDTO) {
+        userOrderService.updateUserOrder(userOrderDTO.getId(), userOrderDTO.getStatus());
+        return new UserOrderDTO();
+    }
+
 
 }

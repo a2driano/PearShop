@@ -24,6 +24,11 @@ public class UserOrderRepositoryImpl implements UserOrderRepository {
     }
 
     @Override
+    public UserOrder getUserOrderById(Integer id) {
+        return (UserOrder) entityManager.createNamedQuery("GetUserOrderById").setParameter("id", id).getSingleResult();
+    }
+
+    @Override
     public UserOrder addUserOrder(UserOrder userOrder) {
         entityManager.persist(userOrder);
         entityManager.flush();
