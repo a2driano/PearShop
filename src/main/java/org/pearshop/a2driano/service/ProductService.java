@@ -34,5 +34,10 @@ public interface ProductService {
      */
     ProductDTO getProductByArticle(Integer id);
 
+    /**
+     * Update Product
+     *
+     * @param productDTO
+     */
     void updateProduct(ProductDTO productDTO);
 }

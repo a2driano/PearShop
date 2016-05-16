@@ -12,6 +12,18 @@ import java.util.List;
  * @since 15.05.2016
  */
 public interface CountProductService {
+    /**
+     * Return List CountProducts
+     *
+     * @return
+     */
     List<CountProductDTO> getAllCountProduct();
+
+    /**
+     * Return CountProduct by id
+     *
+     * @param id
+     * @return
+     */
     CountProduct getCountProduct(Integer id);
 }
