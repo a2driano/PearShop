@@ -47,6 +47,7 @@ public class RootContextConfig {
         populator.addScript(new ClassPathResource("iphone.sql"));
         populator.addScript(new ClassPathResource("ipad.sql"));
         populator.addScript(new ClassPathResource("iwatch.sql"));
+        populator.addScript(new ClassPathResource("user.sql"));
         DataSourceInitializer initializer = new DataSourceInitializer();
         initializer.setDataSource(dataSource);
         initializer.setDatabasePopulator(populator);

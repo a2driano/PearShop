@@ -18,7 +18,7 @@ import javax.persistence.*;
 })
 public class User {
     @Id
-    @Column(name = "order_id")
+    @Column(name = "id")
     @GenericGenerator(name = "kaugen", strategy = "increment")
     @GeneratedValue(generator = "kaugen")
     private Integer id;
