@@ -7,6 +7,7 @@ package org.pearshop.a2driano.config;
  * @since 21.04.2016
  */
 
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {

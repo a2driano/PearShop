@@ -23,7 +23,7 @@ public class MainController {
     private ProductService productService;
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView start(){
+    public ModelAndView start() {
         ModelAndView modelAndView = new ModelAndView("index");
         modelAndView.addObject("productList", productService.getAll());
         System.out.println(modelAndView);

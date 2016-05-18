@@ -13,5 +13,5 @@ public interface UserService {
      * Return User by login
      * @return
      */
-    UserDTO getUserByLogin();
+    UserDTO getUserByLogin(String login);
 }

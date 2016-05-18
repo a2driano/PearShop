@@ -10,5 +10,11 @@ import org.pearshop.a2driano.model.entity.User;
  */
 
 public interface UserRepository {
+    /**
+     * Return User by his login
+     *
+     * @param login
+     * @return
+     */
     User getUserByLogin(String login);
 }

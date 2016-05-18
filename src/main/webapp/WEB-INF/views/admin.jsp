@@ -75,6 +75,11 @@
             </tbody>
         </table>
     </div>
+    <div class="center-block container">
+        <a href="/logout">
+            <button class="btn btn-success btn-lg">Выйти</button>
+        </a>
+    </div>
 </div>
 
 <div class="container-fluid footer">

@@ -1,7 +1,6 @@
 package org.pearshop.a2driano.service;
 
 import org.pearshop.a2driano.model.Status;
-import org.pearshop.a2driano.model.entity.UserOrder;
 import org.pearshop.a2driano.model.web.UserOrderDTO;
 
 import java.util.List;

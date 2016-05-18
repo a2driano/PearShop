@@ -1,8 +1,10 @@
 package org.pearshop.a2driano.config;
 
+import org.pearshop.a2driano.service.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -17,8 +19,13 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan("org.pearshop.a2driano.controller")
+@ComponentScan("org.pearshop.a2driano.*")
 public class ServletContextConfig extends WebMvcConfigurerAdapter {
+
+    @Bean
+    public UserDetailsService getUserDetailsService() {
+        return new UserDetailsServiceImpl();
+    }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

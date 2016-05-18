@@ -11,9 +11,22 @@ import java.util.List;
  * @since 15.05.2016
  */
 public interface CountProductRepository {
+    /**
+     * return List of CountProduct
+     * @return
+     */
     List<CountProduct> getAllCountProducts();
 
+    /**
+     * Add new CountProduct in DB
+     * @param countProduct
+     */
     void addCountProduct(CountProduct countProduct);
 
+    /**
+     * Return CountProduct by id
+     * @param id
+     * @return
+     */
     CountProduct getCountProductById(Integer id);
 }

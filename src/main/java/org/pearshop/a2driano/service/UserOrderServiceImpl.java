@@ -47,9 +47,9 @@ public class UserOrderServiceImpl implements UserOrderService {
 
     @Override
     public UserOrderDTO getUserOrder(Integer id) {
-        UserOrderDTO userOrderDTO=new UserOrderDTO();
+        UserOrderDTO userOrderDTO = new UserOrderDTO();
         try {
-            userOrderDTO=convertUserOrderToUserOrderDTO(userOrderRepository.getUserOrderById(id));
+            userOrderDTO = convertUserOrderToUserOrderDTO(userOrderRepository.getUserOrderById(id));
         } catch (Exception e) {
             System.err.println(e);
         }
@@ -74,7 +74,7 @@ public class UserOrderServiceImpl implements UserOrderService {
     @Override
     public void updateUserOrder(Integer id, Status status) {
         try {
-            UserOrder userOrder=userOrderRepository.getUserOrderById(id);
+            UserOrder userOrder = userOrderRepository.getUserOrderById(id);
             userOrder.setStatus(status);
             userOrderRepository.updateUserOrder(userOrder);
         } catch (Exception e) {

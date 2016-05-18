@@ -32,7 +32,7 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Product getProductById(Integer id) {
-        return (Product)entityManager.createNamedQuery("GetProductById")
+        return (Product) entityManager.createNamedQuery("GetProductById")
                 .setParameter("id", id).getSingleResult();
     }
 

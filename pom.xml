@@ -16,6 +16,8 @@
         <h2.version>1.4.188</h2.version>
         <jackson.version>2.6.1</jackson.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.security.version>3.2.3.RELEASE</spring.security.version>
+        <!--<spring.securiry>3.2.3.RELEASE</spring.securiry>-->
         <!--<hsqldb.version>2.3.2</hsqldb.version>-->
         <!--<slf4j.version>1.7.12</slf4j.version>-->
         <!--<junit.version>4.12</junit.version>-->
@@ -67,12 +69,6 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
-        <!-- HyperSQL DB -->
-        <!--<dependency>-->
-            <!--<groupId>org.hsqldb</groupId>-->
-            <!--<artifactId>hsqldb</artifactId>-->
-            <!--<version>${hsqldb.version}</version>-->
-        <!--</dependency>-->
         <!-- H2 -->
         <dependency>
             <groupId>com.h2database</groupId>
@@ -97,8 +93,52 @@
             <version>${jackson.version}</version>
         </dependency>
 
-    </dependencies>
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
+        <version>${spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${spring.security.version}</version>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.security</groupId>-->
+            <!--<artifactId>spring-security-web</artifactId>-->
+            <!--<version>${spring.securiry}</version>-->
+        <!--</dependency>-->
 
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.security</groupId>-->
+            <!--<artifactId>spring-security-core</artifactId>-->
+            <!--<version>${spring.securiry}</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.security</groupId>-->
+            <!--<artifactId>spring-security-config</artifactId>-->
+            <!--<version>${spring.securiry}</version>-->
+        <!--</dependency>-->
+
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.security</groupId>-->
+            <!--<artifactId>spring-security-taglibs</artifactId>-->
+            <!--<version>${spring.securiry}</version>-->
+        <!--</dependency>-->
+        <!--VALIDATOR-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.1.3.Final</version>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>

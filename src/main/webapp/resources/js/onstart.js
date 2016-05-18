@@ -101,8 +101,7 @@ var onStart = function () {
             contentType: 'application/json',
             data: JSON.stringify(data),
             success: function (response) {
-                //alert('Заказ получен, менеджер свяжиться с Вами в ближайшее время!');
-                console.log('Заказ получен, менеджер свяжиться с Вами в ближайшее время!');
+                alert('Заказ получен, менеджер свяжется с Вами в ближайшее время!');
             },
             error: function (error) {
                 console.log('ERROR:' + error);
