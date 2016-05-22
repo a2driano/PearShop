@@ -34,11 +34,4 @@ public class AdminCotroller {
         userOrderService.updateUserOrder(userOrderDTO.getId(), userOrderDTO.getStatus());
         return new UserOrderDTO();
     }
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String loginPage(Model model) {
-        return "login";
-    }
-
-
 }

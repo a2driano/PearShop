@@ -1,5 +1,6 @@
 package org.pearshop.a2driano.config;
 
+import org.pearshop.a2driano.model.Category;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.ComponentScan;
@@ -48,16 +49,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/resources/**").permitAll()
-                .antMatchers("/").permitAll()
-                .antMatchers("/login").permitAll()
-                .antMatchers("/admin").access("hasRole('ADMIN')")
-                .anyRequest().authenticated()
+                .antMatchers("/admin/**").access("hasRole('ADMIN')")
                 .and()
-                .formLogin().loginPage("/login")
-                .loginProcessingUrl("/j_spring_security_check")
-                .usernameParameter("j_username")
-                .passwordParameter("j_password")
-                .and().formLogin().defaultSuccessUrl("/admin", true);
+                .formLogin().defaultSuccessUrl("/admin", true);
+
         http.logout()
                 .permitAll()
                 .logoutUrl("/logout")

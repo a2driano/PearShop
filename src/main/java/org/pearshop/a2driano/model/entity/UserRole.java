@@ -7,6 +7,7 @@ package org.pearshop.a2driano.model.entity;
  * @since 16.05.2016
  */
 public enum UserRole {
+    ANONYMOUS(),
     USER(),
     ADMIN();
 
