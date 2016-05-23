@@ -4,9 +4,14 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.pearshop.a2driano.model.Status;
 import org.pearshop.a2driano.model.entity.CountProduct;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
@@ -19,15 +24,17 @@ import java.util.List;
  */
 @JsonAutoDetect
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class UserOrderDTO implements Serializable{
-//    @JsonIgnore
+public class UserOrderDTO implements Serializable {
     private Integer id;
+    @NotEmpty(message = "Пожалуйста, введите ваше имя!")
     @JsonProperty("firstname")
     private String firstname;
     @JsonProperty("lastname")
     private String lastname;
+    @Email(message = "Некорректный e-mail")
     @JsonProperty("email")
     private String email;
+    @Pattern(regexp = "\\d{12}", message = "Пожалуйста, введите верный формат номера телефона.")
     @JsonProperty("phone")
     private String phone;
     @JsonProperty("description")

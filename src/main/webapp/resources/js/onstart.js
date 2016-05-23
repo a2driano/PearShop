@@ -4,7 +4,6 @@
 $(document).ready(function () {
     onStart();
     clickPrice();
-    //changeStatus();
     $('.order-form').hide();
 });
 var priceProduct;
@@ -101,7 +100,18 @@ var onStart = function () {
             contentType: 'application/json',
             data: JSON.stringify(data),
             success: function (response) {
-                alert('Заказ получен, менеджер свяжется с Вами в ближайшее время!');
+                $('.error').hide();
+                if (response.status == "SUCCESS") {
+                    $('.order-form').html('');
+                    $('.order-form').append('<h3 class="center-block order-success">Заказ получен, менеджер свяжется с Вами в ближайшее время!</h3>');
+                } else {
+                    console.log(response);
+                    errorInfo = "";
+                    for (i = 0; i < response.result.length; i++) {
+                        $('.' + response.result[i].field + '-input').append('<p class="error">' + response.result[i].defaultMessage + '</p>');
+                    }
+                    console.log('ERRORING');
+                }
             },
             error: function (error) {
                 console.log('ERROR:' + error);
@@ -109,17 +119,16 @@ var onStart = function () {
         });
     });
 
-
     /**add selector of status*/
-    $('.change-status').click(function() {
+    $('.change-status').click(function () {
         $(this).hide();
-        $(this).parent().append('<td id="status-order-select" class="alert-danger center-block"><select id="select-status" class="form-control">'+
-        '<option value="ACTIVE">ACTIVE</option><option value="COMPLETED">COMPLETED</option><option value="CANCELED">CANCELED</option></select></td>');
+        $(this).parent().append('<td id="status-order-select" class="alert-danger center-block"><select id="select-status" class="form-control">' +
+            '<option value="ACTIVE">ACTIVE</option><option value="COMPLETED">COMPLETED</option><option value="CANCELED">CANCELED</option></select></td>');
         $(this).parent().next('.button-container').children('.save-status').removeAttr("disabled");
     });
 
     /**save status*/
-    $('.save-status').on('click',function () {
+    $('.save-status').on('click', function () {
         var data = {
             id: $(this).attr('index'),
             status: $('#select-status :selected').val()
@@ -133,7 +142,7 @@ var onStart = function () {
             data: JSON.stringify(data),
             success: function (response) {
                 console.log('Update success');
-                location.href = $hostRoot+"admin";
+                location.href = $hostRoot + "admin";
             },
             error: function (error) {
                 console.log('ERROR:' + error);

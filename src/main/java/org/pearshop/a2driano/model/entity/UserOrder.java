@@ -27,13 +27,13 @@ public class UserOrder implements Serializable {
     @GeneratedValue(generator = "kaugen")
     private Integer id;
 
-    @Column(name = "firstname", unique = false, nullable = false, length = 100)
+    @Column(name = "firstname", unique = false, nullable = false, length = 50)
     private String firstname;
 
     @Column(name = "lastname", unique = false, length = 100)
     private String lastname;
 
-    @Column(name = "email", unique = false, nullable = false, length = 100)
+    @Column(name = "email", unique = false, length = 100)
     private String email;
 
     @Column(name = "phone", unique = false, nullable = false, length = 12)

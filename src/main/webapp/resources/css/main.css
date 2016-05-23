@@ -106,7 +106,8 @@
 .textinfo {
     color: #1702ff;
 }
-.order-form{
+
+.order-form {
     margin-top: -230px;
     width: 400px;
     /*margin: 4px;*/
@@ -119,6 +120,19 @@
     background-color: #222222;
     color: #afafaf;
 }
+
+/*ERROR*/
+.error {
+    color: red;
+    margin-bottom: -5px;
+}
+
+.order-success {
+    text-align: center;
+    color: #43bc43;
+    margin-bottom: 250px;
+}
+
 /*SPINNER*/
 @import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
 
